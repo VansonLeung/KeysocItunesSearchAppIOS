@@ -26,6 +26,10 @@
 		21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */; };
 		21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */; };
 		21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEAD2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift */; };
+		21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */; };
+		21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEB72AB0E4E700BFF4B2 /* Localizable.strings */; };
+		21BDDEBB2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */; };
+		21BDDEBE2AB0EC8900BFF4B2 /* String+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,12 @@
 		21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUILabel.swift; sourceTree = "<group>"; };
 		21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetailsViewController.xib; sourceTree = "<group>"; };
 		21BDDEAD2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIPaginationViewModel.swift; sourceTree = "<group>"; };
+		21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguageManager.swift; sourceTree = "<group>"; };
+		21BDDEB62AB0E4E700BFF4B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		21BDDEB82AB0E4F500BFF4B2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		21BDDEB92AB0E4FA00BFF4B2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIRefreshControl.swift; sourceTree = "<group>"; };
+		21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+i18n.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,9 @@
 		21BDDE5A2AB074B500BFF4B2 /* KeysocItunesSearchAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				21BDDEB22AB0E46A00BFF4B2 /* Localizables */,
+				21BDDEBC2AB0EC7C00BFF4B2 /* Extensions */,
+				21BDDEAF2AB0E3D700BFF4B2 /* Managers */,
 				21BDDEA62AB0CBF800BFF4B2 /* UIBaseClasses */,
 				21BDDE9C2AB0C2E200BFF4B2 /* UIElements */,
 				21BDDE932AB0B55000BFF4B2 /* ViewModels */,
@@ -183,8 +196,33 @@
 			isa = PBXGroup;
 			children = (
 				21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */,
+				21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */,
 			);
 			path = UIBaseClasses;
+			sourceTree = "<group>";
+		};
+		21BDDEAF2AB0E3D700BFF4B2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		21BDDEB22AB0E46A00BFF4B2 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEB72AB0E4E700BFF4B2 /* Localizable.strings */,
+			);
+			path = Localizables;
+			sourceTree = "<group>";
+		};
+		21BDDEBC2AB0EC7C00BFF4B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +315,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 21BDDE4F2AB074B500BFF4B2;
 			packageReferences = (
@@ -302,6 +342,7 @@
 				21BDDE682AB074B700BFF4B2 /* LaunchScreen.storyboard in Resources */,
 				21BDDE9B2AB0C12B00BFF4B2 /* SongListViewController.xib in Resources */,
 				21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */,
+				21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */,
 				21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */,
 				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
 				21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */,
@@ -332,11 +373,14 @@
 				21BDDE952AB0BD1400BFF4B2 /* SongViewModel.swift in Sources */,
 				21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */,
 				21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */,
+				21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */,
 				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
 				21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */,
 				21BDDE992AB0C08F00BFF4B2 /* SongDetailsViewController.swift in Sources */,
+				21BDDEBE2AB0EC8900BFF4B2 /* String+i18n.swift in Sources */,
 				21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */,
 				21BDDE972AB0C08600BFF4B2 /* SongListViewController.swift in Sources */,
+				21BDDEBB2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +433,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		21BDDEB72AB0E4E700BFF4B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21BDDEB62AB0E4E700BFF4B2 /* en */,
+				21BDDEB82AB0E4F500BFF4B2 /* zh-Hant */,
+				21BDDEB92AB0E4FA00BFF4B2 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -396,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -456,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

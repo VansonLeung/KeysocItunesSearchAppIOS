@@ -27,6 +27,8 @@ class SongListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        UILabel().text = NSString("asdfasdf") as String
+        
         // Set the custom cell identifier to "SongCell" in your storyboard or XIB
         tableView.register(UINib(nibName: "KCUISongListCellHorizontal", bundle: nil), forCellReuseIdentifier: "SongCell")
 
@@ -34,10 +36,8 @@ class SongListViewController: UIViewController {
         fetchSongs(isRefresh: true)
 
         // Add RefreshControl to tableView
-        let refreshControl = UIRefreshControl()
+        let refreshControl = KCUIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshTableView(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor.blue // Change the spinner color
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh") // Add a title
         tableView.refreshControl = refreshControl
     }
     
@@ -156,6 +156,15 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if AppLanguageManager.shared.currentLanguage == "zh-Hant" {
+            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hans")
+        }
+        else if AppLanguageManager.shared.currentLanguage == "zh-Hans" {
+            AppLanguageManager.shared.changeAppLanguage(language: "en")
+        }
+        else {
+            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hant")
+        }
     }
 }
 
