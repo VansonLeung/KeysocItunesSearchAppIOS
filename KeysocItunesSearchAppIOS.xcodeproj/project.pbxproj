@@ -16,6 +16,16 @@
 		21BDDE732AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE722AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.swift */; };
 		21BDDE7D2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7C2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift */; };
 		21BDDE7F2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift */; };
+		21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */; };
+		21BDDE952AB0BD1400BFF4B2 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */; };
+		21BDDE972AB0C08600BFF4B2 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */; };
+		21BDDE992AB0C08F00BFF4B2 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */; };
+		21BDDE9B2AB0C12B00BFF4B2 /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */; };
+		21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */; };
+		21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */; };
+		21BDDEA32AB0C46700BFF4B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDEA22AB0C46700BFF4B2 /* SDWebImage */; };
+		21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */; };
+		21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,14 @@
 		21BDDE782AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeysocItunesSearchAppIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BDDE7C2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocItunesSearchAppIOSUITests.swift; sourceTree = "<group>"; };
 		21BDDE7E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocItunesSearchAppIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailsViewController.swift; sourceTree = "<group>"; };
+		21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
+		21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUISongListCellHorizontal.swift; sourceTree = "<group>"; };
+		21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KCUISongListCellHorizontal.xib; sourceTree = "<group>"; };
+		21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUILabel.swift; sourceTree = "<group>"; };
+		21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BDDEA32AB0C46700BFF4B2 /* SDWebImage in Frameworks */,
+				21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +119,10 @@
 		21BDDE5A2AB074B500BFF4B2 /* KeysocItunesSearchAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				21BDDEA62AB0CBF800BFF4B2 /* UIBaseClasses */,
+				21BDDE9C2AB0C2E200BFF4B2 /* UIElements */,
+				21BDDE932AB0B55000BFF4B2 /* ViewModels */,
+				21BDDE922AB0B54800BFF4B2 /* ViewControllers */,
 				21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */,
 				21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */,
 				21BDDE5F2AB074B500BFF4B2 /* ViewController.swift */,
@@ -127,6 +151,42 @@
 			path = KeysocItunesSearchAppIOSUITests;
 			sourceTree = "<group>";
 		};
+		21BDDE922AB0B54800BFF4B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */,
+				21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */,
+				21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */,
+				21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		21BDDE932AB0B55000BFF4B2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		21BDDE9C2AB0C2E200BFF4B2 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */,
+				21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		21BDDEA62AB0CBF800BFF4B2 /* UIBaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */,
+			);
+			path = UIBaseClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +203,10 @@
 			dependencies = (
 			);
 			name = KeysocItunesSearchAppIOS;
+			packageProductDependencies = (
+				21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */,
+				21BDDEA22AB0C46700BFF4B2 /* SDWebImage */,
+			);
 			productName = KeysocItunesSearchAppIOS;
 			productReference = 21BDDE582AB074B500BFF4B2 /* KeysocItunesSearchAppIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +279,10 @@
 				Base,
 			);
 			mainGroup = 21BDDE4F2AB074B500BFF4B2;
+			packageReferences = (
+				21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */,
+				21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 21BDDE592AB074B500BFF4B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BDDE682AB074B700BFF4B2 /* LaunchScreen.storyboard in Resources */,
+				21BDDE9B2AB0C12B00BFF4B2 /* SongListViewController.xib in Resources */,
+				21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */,
 				21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */,
+				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
 				21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BDDE602AB074B500BFF4B2 /* ViewController.swift in Sources */,
+				21BDDE952AB0BD1400BFF4B2 /* SongViewModel.swift in Sources */,
 				21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */,
+				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
 				21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */,
+				21BDDE992AB0C08F00BFF4B2 /* SongDetailsViewController.swift in Sources */,
+				21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */,
+				21BDDE972AB0C08600BFF4B2 /* SongListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +518,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +527,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.keysoc.itunessearchapp.KeysocItunesSearchAppIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,8 +548,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +557,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vp.keysoc.itunessearchapp.KeysocItunesSearchAppIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -596,6 +678,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/vanson1/keysocitunessearchapiserviceios-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */;
+			productName = "KeysocItunesSearchAPIServiceiOS-Swift";
+		};
+		21BDDEA22AB0C46700BFF4B2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21BDDE502AB074B500BFF4B2 /* Project object */;
 }

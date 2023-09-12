@@ -6,12 +6,21 @@
 //
 
 import UIKit
+import KeysocItunesSearchAPIServiceiOS_Swift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        KCITunesAPIQueryService.shared.searchSongs(withQuery: "alex") { result in
+            switch result {
+            case .success(let items):
+                print(items)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 
