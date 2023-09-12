@@ -12,15 +12,11 @@ class SongListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var songViewModels: [SongViewModel] = []
+   
+    var paginationViewModel = KCUIPaginationViewModel()
     
-    var currentPage = 0
     let itemsPerPage = 20
-    var isLoading = false
-    var isRefreshing = false
-    var isEnded = false
-    var isError = false
-    var refreshHash: Int = 1
-    
+
     var query = "alex"
     
     
@@ -35,83 +31,73 @@ class SongListViewController: UIViewController {
         tableView.register(UINib(nibName: "KCUISongListCellHorizontal", bundle: nil), forCellReuseIdentifier: "SongCell")
 
         // Fetch songs and update the view
-        fetchSongs()
+        fetchSongs(isRefresh: true)
+
+        // Add RefreshControl to tableView
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshTableView(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.blue // Change the spinner color
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh") // Add a title
+        tableView.refreshControl = refreshControl
+    }
+    
+
+    @objc func refreshTableView(_ sender: UIRefreshControl) {
+        // Fetch songs and update the view
+        fetchSongs(isRefresh: true)
     }
     
     
     func fetchSongs(isRefresh: Bool = false) {
-        
-        if isRefreshing {
-            return
-        }
-        
-        
-        if isRefresh {
-            isRefreshing = true
-        } else {
-            if isEnded {
-                return
-            }
-            if isLoading {
-                return
-            }
-            isLoading = true
-        }
-        
-
-        // assign runtime values here
-        let curRefreshHash = refreshHash
-        let page = isRefresh ? 0 : currentPage
-        
-        KCITunesAPIQueryService.shared.searchSongs(
-            withQuery: query,
-            limit: itemsPerPage,
-            offset: page * itemsPerPage
-        ) { [weak self] result in
-            switch result {
-            case .success(let songs):
-                
-                self?.isError = false
-
-                // post-processing refresh / loading
-                if isRefresh {
-
-                    // update
-                    self?.currentPage = 1
-                    self?.refreshHash += 1
-                    self?.isRefreshing = false
-                    self?.isLoading = false
-                    self?.isEnded = songs.isEmpty
-                    // Refresh the viewmodel list
-                    self?.songViewModels.removeAll()
-                    self?.songViewModels.append(contentsOf: songs.map { SongViewModel(song: $0) } )
-                    // Reload the table view on the main queue
-                    self?.reloadList()
-                    //
-
-                } else {
-
-                    // check refresh hash:
-                    // if hash is unchanged, load more is valid
-                    if let h = self?.refreshHash, h == curRefreshHash {
-                        // update
-                        self?.currentPage += 1
-                        self?.isLoading = false
-                        self?.isEnded = songs.isEmpty
+        paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
+            [weak self] shouldFetch, curRefreshHash, page in
+            
+            if !shouldFetch { return }
+            
+            KCITunesAPIQueryService.shared.searchSongs(
+                withQuery: self?.query ?? "",
+                limit: self?.itemsPerPage ?? 1,
+                offset: page * (self?.itemsPerPage ?? 0)
+            ) { [weak self] result in
+                switch result {
+                case .success(let songs):
+                    
+                    self?.paginationViewModel.onPostFetch(
+                        curRefreshHash: curRefreshHash,
+                        isRefresh: isRefresh,
+                        isError: false,
+                        isEnded: songs.isEmpty)
+                    {
+                        if isRefresh {
+                            // restore RefreshControl
+                            self?.tableView.refreshControl?.endRefreshing()
+                            // Refresh the viewmodel list
+                            self?.songViewModels.removeAll()
+                        }
+                        
                         // Append the viewmodel list
                         self?.songViewModels.append(contentsOf: songs.map { SongViewModel(song: $0) } )
-                        // Reload the table view on the main queue
                         self?.reloadList()
+                        self?.refreshState()
                     }
-
+                    
+                case .failure(let error):
+                    print(error)
+                    self?.paginationViewModel.onPostFetch(
+                        curRefreshHash: curRefreshHash,
+                        isRefresh: isRefresh,
+                        isError: true,
+                        isEnded: true)
+                    {
+                        if isRefresh {
+                            // restore RefreshControl
+                            self?.tableView.refreshControl?.endRefreshing()
+                        }
+                        
+                        self?.reloadList()
+                        self?.refreshState()
+                    }
                 }
-                
-                self?.refreshState()
-                
-            case .failure(let error):
-                print(error)
-                self?.isError = true
-                self?.reloadList()
             }
         }
     }
@@ -131,7 +117,22 @@ class SongListViewController: UIViewController {
     }
 }
 
+
 extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+
+        // Check if the user has scrolled to the bottom and isLoading is false
+        if offsetY > contentHeight - screenHeight,
+            paginationViewModel.isLoadNextPageAvailable() {
+            fetchSongs()
+        }
+    }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songViewModels.count
     }
@@ -153,16 +154,8 @@ extension SongListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let screenHeight = scrollView.frame.size.height
-
-        // Check if the user has scrolled to the bottom and isLoading is false
-        if offsetY > contentHeight - screenHeight, !isLoading {
-            fetchSongs()
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
