@@ -1,33 +1,33 @@
 //
-//  SongViewModel.swift
+//  KCUIItemsMusicSongItemViewModel.swift
 //  KeysocItunesSearchAppIOS
 //
-//  Created by Vanson Leung on 12/9/2023.
+//  Created by Vanson Leung on 13/9/2023.
 //
 
 import Foundation
 import KeysocItunesSearchAPIServiceiOS_Swift
 
-struct SongViewModel: Identifiable {
-    let id: Int?
+class KCUIItunesItemSongViewModel: KCUIItunesAnyItemViewModel {
     
-    let artistId: Int?
-    let collectionId: Int?
-    let trackId: Int?
-    let artistName: String?
-    let collectionName: String?
-    let trackName: String?
+    var artistId: Int?
+    var collectionId: Int?
+    var trackId: Int?
+    var artistName: String?
+    var collectionName: String?
+    var trackName: String?
     
-    let releaseDate: String?
-    let artistViewUrl: URL?
-    let collectionViewUrl: URL?
-    let trackViewUrl: URL?
-    let previewUrl: URL?
-    let artworkUrl30: URL?
-    let artworkUrl60: URL?
-    let artworkUrl100: URL?
-
+    var releaseDate: String?
+    var artistViewUrl: URL?
+    var collectionViewUrl: URL?
+    var trackViewUrl: URL?
+    var previewUrl: URL?
+    var artworkUrl30: URL?
+    var artworkUrl60: URL?
+    var artworkUrl100: URL?
+    
     init(song: KCItunesSong) {
+        super.init()
         self.id = song.trackId
         self.artistId = song.artistId
         self.collectionId = song.collectionId
@@ -45,11 +45,15 @@ struct SongViewModel: Identifiable {
         self.artworkUrl100 = song.artworkUrl100
     }
     
-    var title: String {
+    override var title: String {
         return "\(trackName ?? "")".trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    var desc: String {
+    override var desc: String {
         return "\(artistName ?? "")\n\(collectionName ?? "")".trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    override var thumbImageUrl: URL? {
+        return artworkUrl100
     }
 }

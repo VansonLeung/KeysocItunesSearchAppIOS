@@ -16,20 +16,38 @@
 		21BDDE7D2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7C2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift */; };
 		21BDDE7F2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift */; };
 		21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */; };
-		21BDDE952AB0BD1400BFF4B2 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */; };
-		21BDDE972AB0C08600BFF4B2 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */; };
-		21BDDE992AB0C08F00BFF4B2 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */; };
-		21BDDE9B2AB0C12B00BFF4B2 /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */; };
+		21BDDE952AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE942AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift */; };
+		21BDDE992AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */; };
 		21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */; };
 		21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */; };
 		21BDDEA32AB0C46700BFF4B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDEA22AB0C46700BFF4B2 /* SDWebImage */; };
 		21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */; };
-		21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */; };
+		21BDDEAC2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */; };
 		21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEAD2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift */; };
 		21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */; };
 		21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEB72AB0E4E700BFF4B2 /* Localizable.strings */; };
 		21BDDEBB2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */; };
 		21BDDEBE2AB0EC8900BFF4B2 /* String+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */; };
+		21BDDEC82AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEC72AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift */; };
+		21BDDECA2AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */; };
+		21BDDECC2AB169EF00BFF4B2 /* KCUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDECB2AB169EF00BFF4B2 /* KCUIPageView.swift */; };
+		21BDDED02AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */; };
+		21BDDED22AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */; };
+		21BDDED42AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDED32AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift */; };
+		21BDDED62AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDED52AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift */; };
+		21BDDED82AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDED72AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift */; };
+		21BDDEDB2AB19E5A00BFF4B2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEDA2AB19E5A00BFF4B2 /* DateHelper.swift */; };
+		21BDDEDD2AB1A78600BFF4B2 /* KCUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEDC2AB1A78600BFF4B2 /* KCUISearchBar.swift */; };
+		21BDDEDF2AB1A97100BFF4B2 /* String+DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEDE2AB1A97100BFF4B2 /* String+DateHelper.swift */; };
+		21BDDEE12AB1A97E00BFF4B2 /* Date+DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEE02AB1A97E00BFF4B2 /* Date+DateHelper.swift */; };
+		21BDDEE32AB1AAD200BFF4B2 /* KCUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEE22AB1AAD200BFF4B2 /* KCUITableView.swift */; };
+		21BDDEE52AB1ABF900BFF4B2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEE42AB1ABF900BFF4B2 /* RootViewController.swift */; };
+		21BDDEE72AB1B27300BFF4B2 /* KCUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEE62AB1B27300BFF4B2 /* KCUIViewController.swift */; };
+		21BDDEE92AB1B4A000BFF4B2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEE82AB1B4A000BFF4B2 /* SettingsViewController.swift */; };
+		21BDDEEB2AB1B52100BFF4B2 /* KCUISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEEA2AB1B52100BFF4B2 /* KCUISegmentedControl.swift */; };
+		21BDDEED2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */; };
+		21BDDEEF2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEEE2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib */; };
+		21BDDEF12AB1B7DC00BFF4B2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,14 +80,12 @@
 		21BDDE782AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeysocItunesSearchAppIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BDDE7C2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocItunesSearchAppIOSUITests.swift; sourceTree = "<group>"; };
 		21BDDE7E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocItunesSearchAppIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
-		21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
-		21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailsViewController.swift; sourceTree = "<group>"; };
-		21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
+		21BDDE942AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesAnyItemViewModel.swift; sourceTree = "<group>"; };
+		21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicDetailsViewController.swift; sourceTree = "<group>"; };
 		21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUISongListCellHorizontal.swift; sourceTree = "<group>"; };
 		21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KCUISongListCellHorizontal.xib; sourceTree = "<group>"; };
 		21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUILabel.swift; sourceTree = "<group>"; };
-		21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongDetailsViewController.xib; sourceTree = "<group>"; };
+		21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesMusicDetailsViewController.xib; sourceTree = "<group>"; };
 		21BDDEAD2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIPaginationViewModel.swift; sourceTree = "<group>"; };
 		21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguageManager.swift; sourceTree = "<group>"; };
 		21BDDEB62AB0E4E700BFF4B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -77,6 +93,26 @@
 		21BDDEB92AB0E4FA00BFF4B2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIRefreshControl.swift; sourceTree = "<group>"; };
 		21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+i18n.swift"; sourceTree = "<group>"; };
+		21BDDEC72AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchBundleListViewController.swift; sourceTree = "<group>"; };
+		21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesSearchBundleListViewController.xib; sourceTree = "<group>"; };
+		21BDDECB2AB169EF00BFF4B2 /* KCUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIPageView.swift; sourceTree = "<group>"; };
+		21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicItemListViewController.swift; sourceTree = "<group>"; };
+		21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesMusicItemListViewController.xib; sourceTree = "<group>"; };
+		21BDDED32AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesItemSongViewModel.swift; sourceTree = "<group>"; };
+		21BDDED52AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesItemAlbumViewModel.swift; sourceTree = "<group>"; };
+		21BDDED72AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesItemArtistViewModel.swift; sourceTree = "<group>"; };
+		21BDDEDA2AB19E5A00BFF4B2 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		21BDDEDC2AB1A78600BFF4B2 /* KCUISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUISearchBar.swift; sourceTree = "<group>"; };
+		21BDDEDE2AB1A97100BFF4B2 /* String+DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateHelper.swift"; sourceTree = "<group>"; };
+		21BDDEE02AB1A97E00BFF4B2 /* Date+DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateHelper.swift"; sourceTree = "<group>"; };
+		21BDDEE22AB1AAD200BFF4B2 /* KCUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUITableView.swift; sourceTree = "<group>"; };
+		21BDDEE42AB1ABF900BFF4B2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		21BDDEE62AB1B27300BFF4B2 /* KCUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIViewController.swift; sourceTree = "<group>"; };
+		21BDDEE82AB1B4A000BFF4B2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		21BDDEEA2AB1B52100BFF4B2 /* KCUISegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUISegmentedControl.swift; sourceTree = "<group>"; };
+		21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguagePickerViewController.swift; sourceTree = "<group>"; };
+		21BDDEEE2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsLanguagePickerViewController.xib; sourceTree = "<group>"; };
+		21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				21BDDEB22AB0E46A00BFF4B2 /* Localizables */,
+				21BDDED92AB19E5000BFF4B2 /* Helpers */,
 				21BDDEBC2AB0EC7C00BFF4B2 /* Extensions */,
 				21BDDEAF2AB0E3D700BFF4B2 /* Managers */,
 				21BDDEA62AB0CBF800BFF4B2 /* UIBaseClasses */,
@@ -166,10 +203,17 @@
 		21BDDE922AB0B54800BFF4B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				21BDDE962AB0C08600BFF4B2 /* SongListViewController.swift */,
-				21BDDE9A2AB0C12B00BFF4B2 /* SongListViewController.xib */,
-				21BDDE982AB0C08F00BFF4B2 /* SongDetailsViewController.swift */,
-				21BDDEAB2AB0D2D500BFF4B2 /* SongDetailsViewController.xib */,
+				21BDDEC72AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift */,
+				21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */,
+				21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */,
+				21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */,
+				21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */,
+				21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */,
+				21BDDEE82AB1B4A000BFF4B2 /* SettingsViewController.swift */,
+				21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */,
+				21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */,
+				21BDDEEE2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib */,
+				21BDDEE42AB1ABF900BFF4B2 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,7 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				21BDDEAD2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift */,
-				21BDDE942AB0BD1400BFF4B2 /* SongViewModel.swift */,
+				21BDDE942AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift */,
+				21BDDED32AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift */,
+				21BDDED52AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift */,
+				21BDDED72AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,6 +235,7 @@
 			children = (
 				21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */,
 				21BDDE9F2AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib */,
+				21BDDECB2AB169EF00BFF4B2 /* KCUIPageView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -197,6 +245,10 @@
 			children = (
 				21BDDEA72AB0CC1C00BFF4B2 /* KCUILabel.swift */,
 				21BDDEBA2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift */,
+				21BDDEDC2AB1A78600BFF4B2 /* KCUISearchBar.swift */,
+				21BDDEE22AB1AAD200BFF4B2 /* KCUITableView.swift */,
+				21BDDEE62AB1B27300BFF4B2 /* KCUIViewController.swift */,
+				21BDDEEA2AB1B52100BFF4B2 /* KCUISegmentedControl.swift */,
 			);
 			path = UIBaseClasses;
 			sourceTree = "<group>";
@@ -221,8 +273,18 @@
 			isa = PBXGroup;
 			children = (
 				21BDDEBD2AB0EC8900BFF4B2 /* String+i18n.swift */,
+				21BDDEDE2AB1A97100BFF4B2 /* String+DateHelper.swift */,
+				21BDDEE02AB1A97E00BFF4B2 /* Date+DateHelper.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		21BDDED92AB19E5000BFF4B2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEDA2AB19E5A00BFF4B2 /* DateHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,13 +401,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BDDECA2AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib in Resources */,
 				21BDDE682AB074B700BFF4B2 /* LaunchScreen.storyboard in Resources */,
-				21BDDE9B2AB0C12B00BFF4B2 /* SongListViewController.xib in Resources */,
-				21BDDEAC2AB0D2D500BFF4B2 /* SongDetailsViewController.xib in Resources */,
+				21BDDED22AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib in Resources */,
+				21BDDEAC2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib in Resources */,
 				21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */,
 				21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */,
 				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
 				21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */,
+				21BDDEEF2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib in Resources */,
+				21BDDEF12AB1B7DC00BFF4B2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,17 +435,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21BDDE952AB0BD1400BFF4B2 /* SongViewModel.swift in Sources */,
+				21BDDED62AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift in Sources */,
+				21BDDEE52AB1ABF900BFF4B2 /* RootViewController.swift in Sources */,
+				21BDDE952AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift in Sources */,
 				21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */,
+				21BDDEDD2AB1A78600BFF4B2 /* KCUISearchBar.swift in Sources */,
+				21BDDED42AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift in Sources */,
+				21BDDEDB2AB19E5A00BFF4B2 /* DateHelper.swift in Sources */,
 				21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */,
 				21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */,
+				21BDDED02AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift in Sources */,
 				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
+				21BDDEE32AB1AAD200BFF4B2 /* KCUITableView.swift in Sources */,
 				21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */,
-				21BDDE992AB0C08F00BFF4B2 /* SongDetailsViewController.swift in Sources */,
+				21BDDEE72AB1B27300BFF4B2 /* KCUIViewController.swift in Sources */,
+				21BDDEE12AB1A97E00BFF4B2 /* Date+DateHelper.swift in Sources */,
+				21BDDEED2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift in Sources */,
+				21BDDE992AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift in Sources */,
 				21BDDEBE2AB0EC8900BFF4B2 /* String+i18n.swift in Sources */,
 				21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */,
-				21BDDE972AB0C08600BFF4B2 /* SongListViewController.swift in Sources */,
+				21BDDED82AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift in Sources */,
+				21BDDEC82AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift in Sources */,
+				21BDDEEB2AB1B52100BFF4B2 /* KCUISegmentedControl.swift in Sources */,
+				21BDDECC2AB169EF00BFF4B2 /* KCUIPageView.swift in Sources */,
+				21BDDEDF2AB1A97100BFF4B2 /* String+DateHelper.swift in Sources */,
 				21BDDEBB2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift in Sources */,
+				21BDDEE92AB1B4A000BFF4B2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

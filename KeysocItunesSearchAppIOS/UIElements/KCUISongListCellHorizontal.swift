@@ -25,16 +25,18 @@ class KCUISongListCellHorizontal: UITableViewCell {
     }
 
     // Configure custom cell
-    func configure(with viewModel: SongViewModel) {
+    func configure(with viewModel: KCUIItunesAnyItemViewModel) {
         lblSongTitle.text = viewModel.title
         lblSongDesc.text = viewModel.desc
 
-        if let imageUrl = viewModel.artworkUrl100 {
+        if let imageUrl = viewModel.thumbImageUrl {
             // Use SDWebImage to load the image asynchronously
             imgArtwork.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholderImage"))
+            imgArtwork.superview?.isHidden = false
         } else {
             // Set a placeholder image if the URL is not available
             imgArtwork.image = UIImage(named: "placeholderImage")
+            imgArtwork.superview?.isHidden = true
         }
     }
     

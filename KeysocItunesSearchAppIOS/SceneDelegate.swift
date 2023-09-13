@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         // Create and set your root view controller
-        let rootViewController = SongListViewController() // Replace with your view controller class
+        let rootViewController = RootViewController() // Replace with your view controller class
         window.rootViewController = rootViewController
 
         // Set the window and make it key and visible

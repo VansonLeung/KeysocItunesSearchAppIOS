@@ -72,15 +72,17 @@ class KCUIPaginationViewModel {
         // post-processing refresh
         else if isRefresh {
 
-            // update
-            self.currentPage = 1
-            self.refreshHash += 1
-            self.isRefreshing = false
-            self.isLoading = false
-            self.isEnded = isEnded
-            // Reload
-            DispatchQueue.main.async {
-                completion()
+            if self.refreshHash == curRefreshHash {
+                // update
+                self.currentPage = 1
+                self.refreshHash += 1
+                self.isRefreshing = false
+                self.isLoading = false
+                self.isEnded = isEnded
+                // Reload
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
         }
         
