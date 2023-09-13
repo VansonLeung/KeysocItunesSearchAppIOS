@@ -10,4 +10,5 @@
 "generic_languages" = "Languages";
 "generic_edit" = "Edit";
 "generic_cancel" = "Cancel";
+"generic_item_remove" = "Remove";
 

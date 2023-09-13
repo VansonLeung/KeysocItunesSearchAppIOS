@@ -10,3 +10,4 @@
 "generic_languages" = "语言";
 "generic_edit" = "编辑";
 "generic_cancel" = "取消";
+"generic_item_remove" = "移除";
