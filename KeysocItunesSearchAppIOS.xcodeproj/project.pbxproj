@@ -58,6 +58,7 @@
 		21BDDF622AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF612AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift */; };
 		21BDDF642AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF632AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib */; };
 		21BDDF662AB1D49100BFF4B2 /* KCUIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF652AB1D49100BFF4B2 /* KCUIBarButtonItem.swift */; };
+		21BDDF692AB1E80C00BFF4B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDF682AB1E80C00BFF4B2 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BDDF692AB1E80C00BFF4B2 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +171,7 @@
 				21BDDE712AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests */,
 				21BDDE7B2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests */,
 				21BDDE592AB074B500BFF4B2 /* Products */,
+				21BDDF672AB1E80C00BFF4B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,6 +344,13 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		21BDDF672AB1E80C00BFF4B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +389,9 @@
 				21BDDE702AB074B700BFF4B2 /* PBXTargetDependency */,
 			);
 			name = KeysocItunesSearchAppIOSTests;
+			packageProductDependencies = (
+				21BDDF682AB1E80C00BFF4B2 /* SDWebImage */,
+			);
 			productName = KeysocItunesSearchAppIOSTests;
 			productReference = 21BDDE6E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -905,6 +918,11 @@
 			productName = "KeysocItunesSearchAPIServiceiOS-Swift";
 		};
 		21BDDEA22AB0C46700BFF4B2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		21BDDF682AB1E80C00BFF4B2 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
