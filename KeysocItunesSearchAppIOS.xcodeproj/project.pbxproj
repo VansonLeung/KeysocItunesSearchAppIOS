@@ -48,6 +48,13 @@
 		21BDDEED2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */; };
 		21BDDEEF2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEEE2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib */; };
 		21BDDEF12AB1B7DC00BFF4B2 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */; };
+		21BDDEF62AB1BE5100BFF4B2 /* GenericPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEF52AB1BE5100BFF4B2 /* GenericPickerViewController.swift */; };
+		21BDDEF82AB1BE5A00BFF4B2 /* GenericPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDEF72AB1BE5A00BFF4B2 /* GenericPickerViewController.xib */; };
+		21BDDEFC2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDEFA2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodeld */; };
+		21BDDF1B2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF1A2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift */; };
+		21BDDF1D2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF1C2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift */; };
+		21BDDF1F2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */; };
+		21BDDF212AB1C3DB00BFF4B2 /* AppCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF202AB1C3DB00BFF4B2 /* AppCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +120,13 @@
 		21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLanguagePickerViewController.swift; sourceTree = "<group>"; };
 		21BDDEEE2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsLanguagePickerViewController.xib; sourceTree = "<group>"; };
 		21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		21BDDEF52AB1BE5100BFF4B2 /* GenericPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPickerViewController.swift; sourceTree = "<group>"; };
+		21BDDEF72AB1BE5A00BFF4B2 /* GenericPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericPickerViewController.xib; sourceTree = "<group>"; };
+		21BDDEFB2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KeysocItunesSearchApp.xcdatamodel; sourceTree = "<group>"; };
+		21BDDF1A2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesMusicItemFavouriteListViewController.swift; sourceTree = "<group>"; };
+		21BDDF1C2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesFavouriteAnyItemViewModel.swift; sourceTree = "<group>"; };
+		21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesMusicItemFavouriteListViewController.xib; sourceTree = "<group>"; };
+		21BDDF202AB1C3DB00BFF4B2 /* AppCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +179,7 @@
 		21BDDE5A2AB074B500BFF4B2 /* KeysocItunesSearchAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				21BDDEF92AB1BFFE00BFF4B2 /* CoreData */,
 				21BDDEB22AB0E46A00BFF4B2 /* Localizables */,
 				21BDDED92AB19E5000BFF4B2 /* Helpers */,
 				21BDDEBC2AB0EC7C00BFF4B2 /* Extensions */,
@@ -203,12 +218,8 @@
 		21BDDE922AB0B54800BFF4B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				21BDDEC72AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift */,
-				21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */,
-				21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */,
-				21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */,
-				21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */,
-				21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */,
+				21BDDEF42AB1BE4700BFF4B2 /* Generic */,
+				21BDDEF22AB1BE1700BFF4B2 /* ITunesSearch */,
 				21BDDEE82AB1B4A000BFF4B2 /* SettingsViewController.swift */,
 				21BDDEF02AB1B7DC00BFF4B2 /* SettingsViewController.xib */,
 				21BDDEEC2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift */,
@@ -226,6 +237,7 @@
 				21BDDED32AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift */,
 				21BDDED52AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift */,
 				21BDDED72AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift */,
+				21BDDF1C2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				21BDDEB02AB0E3E300BFF4B2 /* AppLanguageManager.swift */,
+				21BDDF202AB1C3DB00BFF4B2 /* AppCoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,6 +298,38 @@
 				21BDDEDA2AB19E5A00BFF4B2 /* DateHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		21BDDEF22AB1BE1700BFF4B2 /* ITunesSearch */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEC72AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift */,
+				21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */,
+				21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */,
+				21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */,
+				21BDDF1A2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift */,
+				21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */,
+				21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */,
+				21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */,
+			);
+			path = ITunesSearch;
+			sourceTree = "<group>";
+		};
+		21BDDEF42AB1BE4700BFF4B2 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEF52AB1BE5100BFF4B2 /* GenericPickerViewController.swift */,
+				21BDDEF72AB1BE5A00BFF4B2 /* GenericPickerViewController.xib */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		21BDDEF92AB1BFFE00BFF4B2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				21BDDEFA2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,12 +449,14 @@
 				21BDDECA2AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib in Resources */,
 				21BDDE682AB074B700BFF4B2 /* LaunchScreen.storyboard in Resources */,
 				21BDDED22AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib in Resources */,
+				21BDDF1F2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib in Resources */,
 				21BDDEAC2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib in Resources */,
 				21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */,
 				21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */,
 				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
 				21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */,
 				21BDDEEF2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib in Resources */,
+				21BDDEF82AB1BE5A00BFF4B2 /* GenericPickerViewController.xib in Resources */,
 				21BDDEF12AB1B7DC00BFF4B2 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +490,8 @@
 				21BDDED42AB198FB00BFF4B2 /* KCUIItunesItemSongViewModel.swift in Sources */,
 				21BDDEDB2AB19E5A00BFF4B2 /* DateHelper.swift in Sources */,
 				21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */,
+				21BDDEF62AB1BE5100BFF4B2 /* GenericPickerViewController.swift in Sources */,
+				21BDDF212AB1C3DB00BFF4B2 /* AppCoreDataManager.swift in Sources */,
 				21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */,
 				21BDDED02AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift in Sources */,
 				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
@@ -452,10 +501,13 @@
 				21BDDEE12AB1A97E00BFF4B2 /* Date+DateHelper.swift in Sources */,
 				21BDDEED2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift in Sources */,
 				21BDDE992AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift in Sources */,
+				21BDDF1B2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift in Sources */,
 				21BDDEBE2AB0EC8900BFF4B2 /* String+i18n.swift in Sources */,
+				21BDDEFC2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodeld in Sources */,
 				21BDDEA82AB0CC1C00BFF4B2 /* KCUILabel.swift in Sources */,
 				21BDDED82AB1992D00BFF4B2 /* KCUIItunesItemArtistViewModel.swift in Sources */,
 				21BDDEC82AB1642400BFF4B2 /* ITunesSearchBundleListViewController.swift in Sources */,
+				21BDDF1D2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift in Sources */,
 				21BDDEEB2AB1B52100BFF4B2 /* KCUISegmentedControl.swift in Sources */,
 				21BDDECC2AB169EF00BFF4B2 /* KCUIPageView.swift in Sources */,
 				21BDDEDF2AB1A97100BFF4B2 /* String+DateHelper.swift in Sources */,
@@ -668,7 +720,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -698,7 +750,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -846,6 +898,19 @@
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		21BDDEFA2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21BDDEFB2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodel */,
+			);
+			currentVersion = 21BDDEFB2AB1C02800BFF4B2 /* KeysocItunesSearchApp.xcdatamodel */;
+			path = KeysocItunesSearchApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 21BDDE502AB074B500BFF4B2 /* Project object */;
 }
