@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SDWebImage
 @testable import KeysocItunesSearchAppIOS
 
 final class KeysocItunesSearchAppIOSTests: XCTestCase {
