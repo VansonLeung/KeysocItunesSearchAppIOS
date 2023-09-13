@@ -9,10 +9,14 @@ import Foundation
 import KeysocItunesSearchAPIServiceiOS_Swift
 
 class KCUIItunesAnyItemViewModel: NSObject {
-    var id: Int?
+    var _id: Int?
+    
+    var itemId: Int? {
+        return _id
+    }
     
     var title: String {
-        return "Itunes item ID: \(id ?? -1)".trimmingCharacters(in: .whitespacesAndNewlines)
+        return "Itunes item ID: \(_id ?? -1)".trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     var desc: String {

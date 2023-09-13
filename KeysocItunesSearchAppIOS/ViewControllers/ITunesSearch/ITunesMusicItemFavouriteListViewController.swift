@@ -12,13 +12,18 @@ class ITunesMusicItemFavouriteListViewController : UIViewController {
     
     @IBOutlet weak private var tableView: UITableView?
     
-    private var itemViewModels: [KCUIItunesAnyItemViewModel] = []
+    private var itemViewModels: [KCUIItunesFavouriteAnyItemViewModel] = []
     
     private var paginationViewModel = KCUIPaginationViewModel()
     private let itemsPerPage = 20
     
     
     public var itemType: ITunesMusicItemListViewController.ItemType = .song
+    public var isTableViewEditing: Bool = false {
+        didSet {
+            tableView?.isEditing = isTableViewEditing
+        }
+    }
     
     
     init(itemType: ITunesMusicItemListViewController.ItemType) {
@@ -30,6 +35,10 @@ class ITunesMusicItemFavouriteListViewController : UIViewController {
         super.init(coder: coder)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchAny(isRefresh: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -211,15 +220,29 @@ extension ITunesMusicItemFavouriteListViewController: UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if AppLanguageManager.shared.currentLanguage == "zh-Hant" {
-            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hans")
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            if let id = itemViewModels[indexPath.row]._id32 {
+                AppCoreDataManager.shared.itunesAnyItem_deleteFromFavourites(id: Int(id), itemType: itemType)
+            }
+            
+            self.fetchAny(isRefresh: true)
         }
-        else if AppLanguageManager.shared.currentLanguage == "zh-Hans" {
-            AppLanguageManager.shared.changeAppLanguage(language: "en")
-        }
-        else {
-            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hant")
-        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "generic_item_remove".i18n()
     }
 }
 

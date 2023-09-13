@@ -20,9 +20,10 @@ class AppCoreDataManager {
             switch itemType {
             case .song:
                 let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteSong", into: self.context) as! FavouriteSong
-                item.id = Int32(anyItem.id ?? 0)
+                item.id = Int32(anyItem.itemId ?? 0)
                 item.title = anyItem.title
                 item.desc = anyItem.desc
+                item.thumbImageUrl = anyItem.thumbImageUrl
 
                 do {
                     try self.context.save()
@@ -32,9 +33,10 @@ class AppCoreDataManager {
                 
             case .album:
                 let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteAlbum", into: self.context) as! FavouriteAlbum
-                item.id = Int32(anyItem.id ?? 0)
+                item.id = Int32(anyItem.itemId ?? 0)
                 item.title = anyItem.title
                 item.desc = anyItem.desc
+                item.thumbImageUrl = anyItem.thumbImageUrl
 
                 do {
                     try self.context.save()
@@ -44,9 +46,10 @@ class AppCoreDataManager {
                 
             case .artist:
                 let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteArtist", into: self.context) as! FavouriteArtist
-                item.id = Int32(anyItem.id ?? 0)
+                item.id = Int32(anyItem.itemId ?? 0)
                 item.title = anyItem.title
                 item.desc = anyItem.desc
+                item.thumbImageUrl = anyItem.thumbImageUrl
 
                 do {
                     try self.context.save()

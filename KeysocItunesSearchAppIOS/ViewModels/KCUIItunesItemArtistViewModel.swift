@@ -16,7 +16,7 @@ class KCUIItunesItemArtistViewModel: KCUIItunesAnyItemViewModel {
 
     init(artist: KCItunesArtist) {
         super.init()
-        self.id = artist.artistId
+        self._id = artist.artistId
         self.artistId = artist.artistId
         self.artistName = artist.artistName
         self.artistType = artist.artistType

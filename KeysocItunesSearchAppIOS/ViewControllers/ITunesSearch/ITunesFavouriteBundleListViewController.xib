@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ITunesFavouriteBundleListViewController" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="pageView" destination="qkH-ew-Fcw" id="z98-8z-gdo"/>
+                <outlet property="segmentedControl" destination="Hgh-36-0q8" id="R2a-Ld-U7a"/>
+                <outlet property="view" destination="t8p-Bl-atK" id="9ly-da-CpE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="t8p-Bl-atK" customClass="View">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V5r-SK-aUc">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZ6-jy-SEF">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-36-0q8" customClass="KCUISegmentedControl" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="377" height="51"/>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                    <segments>
+                                        <segment title="Songs"/>
+                                        <segment title="Albums"/>
+                                        <segment title="Artists"/>
+                                    </segments>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="stringArrayInspectable" value="seg_songs,seg_albums,seg_artists"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="yBz-lr-3pu"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Hgh-36-0q8" firstAttribute="top" secondItem="AZ6-jy-SEF" secondAttribute="top" id="163-UD-X0x"/>
+                                <constraint firstAttribute="trailing" secondItem="Hgh-36-0q8" secondAttribute="trailing" constant="8" id="6e9-fU-XD9"/>
+                                <constraint firstAttribute="bottom" secondItem="Hgh-36-0q8" secondAttribute="bottom" id="SCJ-g6-dRP"/>
+                                <constraint firstAttribute="height" constant="50" id="Y1M-bc-HuA"/>
+                                <constraint firstItem="Hgh-36-0q8" firstAttribute="leading" secondItem="AZ6-jy-SEF" secondAttribute="leading" constant="8" id="twe-Cy-NrZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="UQq-Kh-JFq">
+                            <rect key="frame" x="0.0" y="58" width="393" height="701"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzm-lr-MX6" userLabel="Container View">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="701"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="qkH-ew-Fcw" customClass="KCUIPageView" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="701"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="pageViewValueChanged:" destination="-1" eventType="valueChanged" id="281-Kp-Bqe"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="qkH-ew-Fcw" secondAttribute="bottom" id="86N-13-JS4"/>
+                                        <constraint firstItem="qkH-ew-Fcw" firstAttribute="leading" secondItem="Yzm-lr-MX6" secondAttribute="leading" id="Imh-mK-gSE"/>
+                                        <constraint firstAttribute="trailing" secondItem="qkH-ew-Fcw" secondAttribute="trailing" id="Ods-Xt-jUr"/>
+                                        <constraint firstItem="qkH-ew-Fcw" firstAttribute="top" secondItem="Yzm-lr-MX6" secondAttribute="top" id="W21-bx-hIT"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Yzm-lr-MX6" secondAttribute="bottom" id="5i3-6R-QEz"/>
+                                <constraint firstItem="Yzm-lr-MX6" firstAttribute="top" secondItem="UQq-Kh-JFq" secondAttribute="top" id="AEZ-cB-dwq"/>
+                                <constraint firstItem="Yzm-lr-MX6" firstAttribute="leading" secondItem="UQq-Kh-JFq" secondAttribute="leading" id="alx-tD-foW"/>
+                                <constraint firstAttribute="trailing" secondItem="Yzm-lr-MX6" secondAttribute="trailing" id="zx4-dS-vMY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="GiT-v0-X2v"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="GiT-v0-X2v" firstAttribute="trailing" secondItem="V5r-SK-aUc" secondAttribute="trailing" id="06x-Xe-T0c"/>
+                <constraint firstItem="GiT-v0-X2v" firstAttribute="bottom" secondItem="V5r-SK-aUc" secondAttribute="bottom" id="A06-G0-v8r"/>
+                <constraint firstItem="V5r-SK-aUc" firstAttribute="top" secondItem="GiT-v0-X2v" secondAttribute="top" id="WU8-jp-roo"/>
+                <constraint firstItem="V5r-SK-aUc" firstAttribute="leading" secondItem="GiT-v0-X2v" secondAttribute="leading" id="bGb-L0-Aot"/>
+            </constraints>
+            <point key="canvasLocation" x="38.931297709923662" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

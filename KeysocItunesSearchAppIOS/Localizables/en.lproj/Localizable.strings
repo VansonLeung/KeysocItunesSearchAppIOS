@@ -3,7 +3,11 @@
 "tbi_search" = "Search";
 "tbi_settings" = "Settings";
 "tbi_languages" = "Languages";
+"tbi_favourites" = "Favourites";
 "seg_songs" = "Songs";
 "seg_albums" = "Albums";
 "seg_artists" = "Artists";
 "generic_languages" = "Languages";
+"generic_edit" = "Edit";
+"generic_cancel" = "Cancel";
+

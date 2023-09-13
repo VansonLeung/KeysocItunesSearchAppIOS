@@ -302,15 +302,8 @@ extension ITunesMusicItemListViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if AppLanguageManager.shared.currentLanguage == "zh-Hant" {
-            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hans")
-        }
-        else if AppLanguageManager.shared.currentLanguage == "zh-Hans" {
-            AppLanguageManager.shared.changeAppLanguage(language: "en")
-        }
-        else {
-            AppLanguageManager.shared.changeAppLanguage(language: "zh-Hant")
-        }
+        
+        AppCoreDataManager.shared.itunesAnyItem_addToFavourites(anyItem: itemViewModels[indexPath.row], itemType: itemType)
     }
 }
 

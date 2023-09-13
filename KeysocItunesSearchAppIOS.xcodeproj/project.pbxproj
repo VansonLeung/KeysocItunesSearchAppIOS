@@ -55,6 +55,9 @@
 		21BDDF1D2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF1C2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift */; };
 		21BDDF1F2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */; };
 		21BDDF212AB1C3DB00BFF4B2 /* AppCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF202AB1C3DB00BFF4B2 /* AppCoreDataManager.swift */; };
+		21BDDF622AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF612AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift */; };
+		21BDDF642AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF632AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib */; };
+		21BDDF662AB1D49100BFF4B2 /* KCUIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF652AB1D49100BFF4B2 /* KCUIBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		21BDDF1C2AB1C20100BFF4B2 /* KCUIItunesFavouriteAnyItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIItunesFavouriteAnyItemViewModel.swift; sourceTree = "<group>"; };
 		21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesMusicItemFavouriteListViewController.xib; sourceTree = "<group>"; };
 		21BDDF202AB1C3DB00BFF4B2 /* AppCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreDataManager.swift; sourceTree = "<group>"; };
+		21BDDF612AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesFavouriteBundleListViewController.swift; sourceTree = "<group>"; };
+		21BDDF632AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesFavouriteBundleListViewController.xib; sourceTree = "<group>"; };
+		21BDDF652AB1D49100BFF4B2 /* KCUIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCUIBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +267,7 @@
 				21BDDEE22AB1AAD200BFF4B2 /* KCUITableView.swift */,
 				21BDDEE62AB1B27300BFF4B2 /* KCUIViewController.swift */,
 				21BDDEEA2AB1B52100BFF4B2 /* KCUISegmentedControl.swift */,
+				21BDDF652AB1D49100BFF4B2 /* KCUIBarButtonItem.swift */,
 			);
 			path = UIBaseClasses;
 			sourceTree = "<group>";
@@ -307,6 +314,8 @@
 				21BDDEC92AB1642A00BFF4B2 /* ITunesSearchBundleListViewController.xib */,
 				21BDDECF2AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift */,
 				21BDDED12AB1971200BFF4B2 /* ITunesMusicItemListViewController.xib */,
+				21BDDF612AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift */,
+				21BDDF632AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib */,
 				21BDDF1A2AB1C1C200BFF4B2 /* ITunesMusicItemFavouriteListViewController.swift */,
 				21BDDF1E2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib */,
 				21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */,
@@ -456,6 +465,7 @@
 				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
 				21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */,
 				21BDDEEF2AB1B7C600BFF4B2 /* SettingsLanguagePickerViewController.xib in Resources */,
+				21BDDF642AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib in Resources */,
 				21BDDEF82AB1BE5A00BFF4B2 /* GenericPickerViewController.xib in Resources */,
 				21BDDEF12AB1B7DC00BFF4B2 /* SettingsViewController.xib in Resources */,
 			);
@@ -492,6 +502,7 @@
 				21BDDEAE2AB0D62D00BFF4B2 /* KCUIPaginationViewModel.swift in Sources */,
 				21BDDEF62AB1BE5100BFF4B2 /* GenericPickerViewController.swift in Sources */,
 				21BDDF212AB1C3DB00BFF4B2 /* AppCoreDataManager.swift in Sources */,
+				21BDDF622AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift in Sources */,
 				21BDDEB12AB0E3E300BFF4B2 /* AppLanguageManager.swift in Sources */,
 				21BDDED02AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift in Sources */,
 				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
@@ -513,6 +524,7 @@
 				21BDDEDF2AB1A97100BFF4B2 /* String+DateHelper.swift in Sources */,
 				21BDDEBB2AB0E6CD00BFF4B2 /* KCUIRefreshControl.swift in Sources */,
 				21BDDEE92AB1B4A000BFF4B2 /* SettingsViewController.swift in Sources */,
+				21BDDF662AB1D49100BFF4B2 /* KCUIBarButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

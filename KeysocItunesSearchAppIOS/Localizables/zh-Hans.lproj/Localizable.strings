@@ -3,7 +3,10 @@
 "tbi_search" = "搜寻";
 "tbi_settings" = "设定";
 "tbi_languages" = "语言";
+"tbi_favourites" = "收藏";
 "seg_songs" = "歌曲";
 "seg_albums" = "专辑";
 "seg_artists" = "艺人";
 "generic_languages" = "语言";
+"generic_edit" = "编辑";
+"generic_cancel" = "取消";

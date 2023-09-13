@@ -12,9 +12,11 @@ class RootViewController : UINavigationController {
     private var rootTabBarController: UITabBarController!
     
     private var vcSearch: ITunesSearchBundleListViewController!
+    private var vcFavourites: ITunesFavouriteBundleListViewController!
     private var vcSettings: SettingsViewController!
     
     private var vcSearchTbiLocalizedKey = "tbi_search"
+    private var vcFavouritesTbiLocalizedKey = "tbi_favourites"
     private var vcSettingsTbiLocalizedKey = "tbi_settings"
 
     override func viewDidLoad() {
@@ -27,12 +29,16 @@ class RootViewController : UINavigationController {
         vcSearch = ITunesSearchBundleListViewController()
         vcSearch.view.backgroundColor = .white
 
+        vcFavourites = ITunesFavouriteBundleListViewController()
+        vcFavourites.view.backgroundColor = .white
+
         vcSettings = SettingsViewController()
         vcSettings.view.backgroundColor = .white
 
         // Add view controllers to the tab bar controller
         rootTabBarController.viewControllers = [
             vcSearch,
+            vcFavourites,
             vcSettings,
         ]
 
@@ -60,6 +66,7 @@ class RootViewController : UINavigationController {
     
     func refreshTabBarItems() {
         vcSearch.tabBarItem = UITabBarItem(title: vcSearchTbiLocalizedKey.i18n(), image: UIImage(named: "ic_search"), selectedImage: nil)
+        vcFavourites.tabBarItem = UITabBarItem(title: vcFavouritesTbiLocalizedKey.i18n(), image: UIImage(named: "ic_favourites"), selectedImage: nil)
         vcSettings.tabBarItem = UITabBarItem(title: vcSettingsTbiLocalizedKey.i18n(), image: UIImage(named: "ic_settings"), selectedImage: nil)
     }
     
@@ -67,8 +74,10 @@ class RootViewController : UINavigationController {
         if rootTabBarController.selectedViewController?.isKind(of: KCUIViewController.self) == true,
            let vc = rootTabBarController.selectedViewController as? KCUIViewController {
             rootTabBarController.title = vc.titleLocalizationKey.i18n()
+            rootTabBarController.navigationItem.rightBarButtonItems = vc.navigationItem.rightBarButtonItems
         } else {
             rootTabBarController.title = rootTabBarController.selectedViewController?.title
+            rootTabBarController.navigationItem.rightBarButtonItems = rootTabBarController.selectedViewController?.navigationItem.rightBarButtonItems
         }
     }
 }
