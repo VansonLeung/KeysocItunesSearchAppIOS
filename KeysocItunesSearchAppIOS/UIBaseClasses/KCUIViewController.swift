@@ -14,8 +14,12 @@ class KCUIViewController : UIViewController {
         return navigationController ?? looseNavigationController
     }
     
+    var overrideTitleLocalizationKey: String? = nil
+    
     var titleLocalizationKey: String {
-        return ""
+        get {
+            return ""
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +38,11 @@ class KCUIViewController : UIViewController {
     }
 
     private func updateText() {
-        if titleLocalizationKey != "" {
+        if let overrideTitleLocalizationKey = overrideTitleLocalizationKey,
+           overrideTitleLocalizationKey != "" {
+            title = overrideTitleLocalizationKey.i18n()
+        }
+        else if titleLocalizationKey != "" {
             title = titleLocalizationKey.i18n()
         }
     }

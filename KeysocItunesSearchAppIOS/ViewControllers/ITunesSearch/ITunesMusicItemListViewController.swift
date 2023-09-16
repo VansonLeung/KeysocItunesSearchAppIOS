@@ -34,6 +34,12 @@ class ITunesMusicItemListViewController : UIViewController {
             fetchAny(isRefresh: true)
         }
     }
+    
+    
+    var selectedCountryValue: String? = nil
+    var selectedMediaTypeValue: String? = nil
+
+    
     public var itemType: ItemType = .song
     
     
@@ -95,7 +101,9 @@ class ITunesMusicItemListViewController : UIViewController {
             KCITunesAPIQueryService.shared.searchSongs(
                 withQuery: self?.query ?? "",
                 limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0)
+                offset: page * (self?.itemsPerPage ?? 0),
+                mediaType: self?.selectedMediaTypeValue,
+                country: self?.selectedCountryValue
             ) { [weak self] result in
                 switch result {
                 case .success(let songs):
@@ -149,7 +157,9 @@ class ITunesMusicItemListViewController : UIViewController {
             KCITunesAPIQueryService.shared.searchArtists(
                 withQuery: self?.query ?? "",
                 limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0)
+                offset: page * (self?.itemsPerPage ?? 0),
+                mediaType: self?.selectedMediaTypeValue,
+                country: self?.selectedCountryValue
             ) { [weak self] result in
                 switch result {
                 case .success(let artists):
@@ -203,7 +213,9 @@ class ITunesMusicItemListViewController : UIViewController {
             KCITunesAPIQueryService.shared.searchAlbums(
                 withQuery: self?.query ?? "",
                 limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0)
+                offset: page * (self?.itemsPerPage ?? 0),
+                mediaType: self?.selectedMediaTypeValue,
+                country: self?.selectedCountryValue
             ) { [weak self] result in
                 switch result {
                 case .success(let albums):

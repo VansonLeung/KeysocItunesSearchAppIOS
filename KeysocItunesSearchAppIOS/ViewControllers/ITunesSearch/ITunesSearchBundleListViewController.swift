@@ -19,7 +19,13 @@ class ITunesSearchBundleListViewController: KCUIViewController {
     var vcSong: ITunesMusicItemListViewController?
     var vcAlbum: ITunesMusicItemListViewController?
     var vcArtist: ITunesMusicItemListViewController?
+    
+    
+    
+    var selectedCountryValue: String? = nil
+    var selectedMediaTypeValue: String? = nil
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +49,11 @@ class ITunesSearchBundleListViewController: KCUIViewController {
         }
         
         searchBar?.delegate = self
+        
+        
+        let barBtnItem = KCUIBarButtonItem(title: "", style: .plain, target: self, action: #selector(onApplyBarBtnFilter))
+        barBtnItem.titleLocalizationKey = "filters".i18n()
+        navigationItem.rightBarButtonItem = barBtnItem
     }
     
     deinit {
@@ -51,6 +62,35 @@ class ITunesSearchBundleListViewController: KCUIViewController {
         vcArtist?.removeFromParent()
     }
 
+    
+    
+    @objc func onApplyBarBtnFilter() {
+        let vc = ITunesSearchFilterListViewController()
+        
+        vc.selectedCountryValue = selectedCountryValue
+        vc.selectedMediaTypeValue = selectedMediaTypeValue
+        
+        vc.onDismiss = { [weak self] countryVal, mediaTypeVal in
+            self?.selectedCountryValue = countryVal
+            self?.selectedMediaTypeValue = mediaTypeVal
+            
+            self?.vcSong?.selectedCountryValue = self?.selectedCountryValue
+            self?.vcSong?.selectedMediaTypeValue = self?.selectedMediaTypeValue
+            self?.vcSong?.fetchAny(isRefresh: true)
+            
+            self?.vcAlbum?.selectedCountryValue = self?.selectedCountryValue
+            self?.vcAlbum?.selectedMediaTypeValue = self?.selectedMediaTypeValue
+            self?.vcAlbum?.fetchAny(isRefresh: true)
+            
+            self?.vcArtist?.selectedCountryValue = self?.selectedCountryValue
+            self?.vcArtist?.selectedMediaTypeValue = self?.selectedMediaTypeValue
+            self?.vcArtist?.fetchAny(isRefresh: true)
+
+        }
+        
+        getNavigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         // Handle the value change here
