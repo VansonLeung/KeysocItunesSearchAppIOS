@@ -11,3 +11,7 @@
 "generic_edit" = "編輯";
 "generic_cancel" = "取消";
 "generic_item_remove" = "移除";
+"filter_by_country" = "以國家";
+"filter_by_mediatype" = "以媒體類型";
+"select_country" = "選擇國家";
+"filters" = "過濾";

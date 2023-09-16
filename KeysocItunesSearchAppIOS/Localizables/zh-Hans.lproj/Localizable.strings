@@ -11,3 +11,7 @@
 "generic_edit" = "编辑";
 "generic_cancel" = "取消";
 "generic_item_remove" = "移除";
+"filter_by_country" = "以国家";
+"filter_by_mediatype" = "以媒体类型";
+"select_country" = "选择国家";
+"filters" = "过滤";

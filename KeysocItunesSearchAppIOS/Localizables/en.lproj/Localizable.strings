@@ -11,4 +11,7 @@
 "generic_edit" = "Edit";
 "generic_cancel" = "Cancel";
 "generic_item_remove" = "Remove";
-
+"filter_by_country" = "By country";
+"filter_by_mediatype" = "By media type";
+"select_country" = "Select country";
+"filters" = "Filters";

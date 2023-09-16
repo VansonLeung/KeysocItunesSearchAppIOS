@@ -46,7 +46,16 @@ class KCUIGenericPickerCellViewModel {
          cellType: CellType,
          onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
     {
-        self.label = country.english
+        let lang = AppLanguageManager.shared.currentLanguage
+        if lang == "en" {
+            self.label = country.english
+        } else if lang == "zh-Hant" {
+            self.label = country.chinese_tc
+        } else if lang == "zh-Hans" {
+            self.label = country.chinese_sc
+        } else {
+            self.label = country.english
+        }
         self.value = country.abbr
         self.onSelected = onSelected
         self.cellType = cellType
@@ -57,7 +66,16 @@ class KCUIGenericPickerCellViewModel {
          cellType: CellType,
          onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
     {
-        self.label = (mediaType.val ?? "").i18n()
+        let lang = AppLanguageManager.shared.currentLanguage
+        if lang == "en" {
+            self.label = mediaType.val_en
+        } else if lang == "zh-Hant" {
+            self.label = mediaType.val_zh_hk
+        } else if lang == "zh-Hans" {
+            self.label = mediaType.val_zh_cn
+        } else {
+            self.label = mediaType.val_en
+        }
         self.value = mediaType.val
         self.onSelected = onSelected
         self.cellType = cellType

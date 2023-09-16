@@ -142,9 +142,9 @@ extension ITunesSearchFilterListViewController : UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as? KCUITableSectionHeaderViewCell
         if let cell = cell {
             if section == 0 {
-                cell.label?.text = "by_country".i18n()
+                cell.label?.text = "filter_by_country".i18n()
             } else if section == 1 {
-                cell.label?.text = "by_mediatype".i18n()
+                cell.label?.text = "filter_by_mediatype".i18n()
             }
         }
         return cell
