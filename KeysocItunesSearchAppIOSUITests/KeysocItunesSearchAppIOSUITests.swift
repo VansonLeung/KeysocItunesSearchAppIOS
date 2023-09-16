@@ -21,6 +21,42 @@ final class KeysocItunesSearchAppIOSUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    
+    func testDemo() throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.searchFields["Search by keywords"].tap()
+        
+        app.keys["A"].tap()
+        app.keys["l"].tap()
+        app.keys["e"].tap()
+        app.keys["x"].tap()
+
+        app.buttons["search"].tap()
+
+        let punchBrothersAntifogmaticDeluxeVersionStaticText = app.scrollViews.otherElements.tables.staticTexts["Punch Brothers Antifogmatic (Deluxe Version)"]
+        punchBrothersAntifogmaticDeluxeVersionStaticText.tap()
+
+        app.navigationBars["Search"].buttons["Filters"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Select country"].tap()
+        tablesQuery.staticTexts["Australia"].tap()
+        app.navigationBars["Select country"].buttons["Back"].tap()
+
+        tablesQuery.staticTexts["Podcasts"].tap()
+        app.navigationBars["Search"].buttons["Search"].tap()
+
+        app.buttons["Albums"].tap()
+        app.buttons["Artists"].tap()
+        app.buttons["Albums"].tap()
+        app.buttons["Songs"].tap()
+
+                                        
+    }
 
     
     
@@ -72,7 +108,7 @@ final class KeysocItunesSearchAppIOSUITests: XCTestCase {
         let xKey = app/*@START_MENU_TOKEN@*/.keys["x"]/*[[".keyboards.keys[\"x\"]",".keys[\"x\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         xKey.tap()
         
-        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards",".buttons[\"search\"]",".buttons[\"Search\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Search"].tap()
         
         app.scrollViews.otherElements.tables/*@START_MENU_TOKEN@*/.staticTexts["Punch Brothers Antifogmatic (Deluxe Version)"]/*[[".cells.staticTexts[\"Punch Brothers Antifogmatic (Deluxe Version)\"]",".staticTexts[\"Punch Brothers Antifogmatic (Deluxe Version)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.tabBars["Tab Bar"].buttons["收藏"].tap()
