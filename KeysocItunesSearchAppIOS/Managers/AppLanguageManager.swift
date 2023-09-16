@@ -9,9 +9,12 @@ import Foundation
 
 
 class AppLanguageManager {
+    
     static let shared = AppLanguageManager()
 
     private let kAppLanguageKey = "AppLanguage"
+
+    static let kLanguageDidChangeKey = "LanguageDidChange"
 
     var currentLanguage: String {
         get {
@@ -25,6 +28,6 @@ class AppLanguageManager {
     
     func changeAppLanguage(language: String) {
         AppLanguageManager.shared.currentLanguage = language
-        NotificationCenter.default.post(name: NSNotification.Name("LanguageDidChange"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(AppLanguageManager.kLanguageDidChangeKey), object: nil)
     }
 }

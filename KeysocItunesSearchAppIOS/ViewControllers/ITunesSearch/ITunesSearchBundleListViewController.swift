@@ -51,7 +51,7 @@ class ITunesSearchBundleListViewController: KCUIViewController {
         searchBar?.delegate = self
         
         
-        let barBtnItem = KCUIBarButtonItem(title: "", style: .plain, target: self, action: #selector(onApplyBarBtnFilter))
+        let barBtnItem = KCUIBarButtonItem(kcTitle: "", style: .plain, target: self, action: #selector(onApplyBarBtnFilter))
         barBtnItem.titleLocalizationKey = "filters"
         navigationItem.rightBarButtonItem = barBtnItem
     }

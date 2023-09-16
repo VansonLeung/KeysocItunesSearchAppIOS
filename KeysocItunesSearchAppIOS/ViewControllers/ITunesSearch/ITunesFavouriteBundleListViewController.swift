@@ -27,7 +27,7 @@ class ITunesFavouriteBundleListViewController: KCUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItemButtonEdit = KCUIBarButtonItem(title: "", style: .plain, target: self, action: #selector(onApplyEditButton))
+        navigationItemButtonEdit = KCUIBarButtonItem(kcTitle: "", style: .plain, target: self, action: #selector(onApplyEditButton))
         navigationItem.rightBarButtonItem = navigationItemButtonEdit
         refreshEditButton()
 

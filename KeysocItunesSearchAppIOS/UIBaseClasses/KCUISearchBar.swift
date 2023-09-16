@@ -25,7 +25,7 @@ class KCUISearchBar: UISearchBar {
         
         updateText()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: NSNotification.Name("LanguageDidChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: NSNotification.Name(AppLanguageManager.kLanguageDidChangeKey), object: nil)
     }
     
     deinit {
