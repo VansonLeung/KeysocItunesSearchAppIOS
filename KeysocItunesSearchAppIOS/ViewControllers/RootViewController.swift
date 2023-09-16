@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class RootViewController : UINavigationController {
     
@@ -18,6 +19,8 @@ class RootViewController : UINavigationController {
     private var vcSearchTbiLocalizedKey = "tbi_search"
     private var vcFavouritesTbiLocalizedKey = "tbi_favourites"
     private var vcSettingsTbiLocalizedKey = "tbi_settings"
+    
+    static var current: RootViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,15 @@ class RootViewController : UINavigationController {
         NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: NSNotification.Name("LanguageDidChange"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        RootViewController.current = self
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        RootViewController.current = nil
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -80,6 +92,13 @@ class RootViewController : UINavigationController {
             rootTabBarController.navigationItem.rightBarButtonItems = rootTabBarController.selectedViewController?.navigationItem.rightBarButtonItems
         }
     }
+    
+    
+    
+    func showToast(message: String?) {
+        self.view.makeToast(message)
+    }
+    
 }
 
 extension RootViewController: UITabBarControllerDelegate {

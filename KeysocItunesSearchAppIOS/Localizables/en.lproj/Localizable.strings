@@ -15,3 +15,6 @@
 "filter_by_mediatype" = "By media type";
 "select_country" = "Select country";
 "filters" = "Filters";
+"favourite_item_already_added" = "Already added to favourites";
+"favourite_item_added" = "Added to favourites";
+"favourite_item_removed" = "Removed from favourites";

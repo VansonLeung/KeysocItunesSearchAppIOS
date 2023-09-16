@@ -15,3 +15,6 @@
 "filter_by_mediatype" = "以媒體類型";
 "select_country" = "選擇國家";
 "filters" = "過濾";
+"favourite_item_already_added" = "已加入到收藏";
+"favourite_item_added" = "成功加入到收藏";
+"favourite_item_removed" = "成功移除收藏";

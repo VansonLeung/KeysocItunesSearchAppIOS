@@ -19,42 +19,98 @@ class AppCoreDataManager {
         if let anyItem = anyItem {
             switch itemType {
             case .song:
-                let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteSong", into: self.context) as! FavouriteSong
-                item.id = Int32(anyItem.itemId ?? 0)
-                item.title = anyItem.title
-                item.desc = anyItem.desc
-                item.thumbImageUrl = anyItem.thumbImageUrl
-
+                let newId = Int32(anyItem.itemId ?? 0)
+                let request = NSFetchRequest<FavouriteSong>(entityName: "FavouriteSong")
+                request.predicate = NSPredicate(format: "id = %d", newId)
                 do {
-                    try self.context.save()
+                    var isUnique = true
+                    
+                    let results = try self.context.fetch(request)
+                    if results.contains(where: { it in
+                        return it.id == newId
+                    }) {
+                        isUnique = false
+                    }
+                        
+                    if isUnique {
+                        let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteSong", into: self.context) as! FavouriteSong
+                        item.id = Int32(anyItem.itemId ?? 0)
+                        item.title = anyItem.title
+                        item.desc = anyItem.desc
+                        item.thumbImageUrl = anyItem.thumbImageUrl
+
+                        try self.context.save()
+                        RootViewController.current?.showToast(message: "favourite_item_added".i18n())
+                    } else {
+                        RootViewController.current?.showToast(message: "favourite_item_already_added".i18n())
+                    }
                 } catch {
-                    fatalError("\(error)")
+//                    fatalError("\(error)")
+                    RootViewController.current?.showToast(message: error.localizedDescription)
                 }
+                
                 
             case .album:
-                let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteAlbum", into: self.context) as! FavouriteAlbum
-                item.id = Int32(anyItem.itemId ?? 0)
-                item.title = anyItem.title
-                item.desc = anyItem.desc
-                item.thumbImageUrl = anyItem.thumbImageUrl
-
+                let newId = Int32(anyItem.itemId ?? 0)
+                let request = NSFetchRequest<FavouriteAlbum>(entityName: "FavouriteAlbum")
+                request.predicate = NSPredicate(format: "id = %d", newId)
                 do {
-                    try self.context.save()
+                    var isUnique = true
+                    
+                    let results = try self.context.fetch(request)
+                    if results.contains(where: { it in
+                        return it.id == newId
+                    }) {
+                        isUnique = false
+                    }
+                        
+                    if isUnique {
+                        let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteAlbum", into: self.context) as! FavouriteAlbum
+                        item.id = Int32(anyItem.itemId ?? 0)
+                        item.title = anyItem.title
+                        item.desc = anyItem.desc
+                        item.thumbImageUrl = anyItem.thumbImageUrl
+
+                        try self.context.save()
+                        RootViewController.current?.showToast(message: "favourite_item_added".i18n())
+                    } else {
+                        RootViewController.current?.showToast(message: "favourite_item_already_added".i18n())
+                    }
                 } catch {
-                    fatalError("\(error)")
+//                    fatalError("\(error)")
+                    RootViewController.current?.showToast(message: error.localizedDescription)
                 }
                 
+                
             case .artist:
-                let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteArtist", into: self.context) as! FavouriteArtist
-                item.id = Int32(anyItem.itemId ?? 0)
-                item.title = anyItem.title
-                item.desc = anyItem.desc
-                item.thumbImageUrl = anyItem.thumbImageUrl
-
+                let newId = Int32(anyItem.itemId ?? 0)
+                let request = NSFetchRequest<FavouriteArtist>(entityName: "FavouriteArtist")
+                request.predicate = NSPredicate(format: "id = %d", newId)
                 do {
-                    try self.context.save()
+                    var isUnique = true
+                    
+                    let results = try self.context.fetch(request)
+                    if results.contains(where: { it in
+                        return it.id == newId
+                    }) {
+                        isUnique = false
+                    }
+                        
+                    if isUnique {
+                        let item = NSEntityDescription.insertNewObject(forEntityName: "FavouriteArtist", into: self.context) as! FavouriteArtist
+                        item.id = Int32(anyItem.itemId ?? 0)
+                        item.title = anyItem.title
+                        item.desc = anyItem.desc
+                        item.thumbImageUrl = anyItem.thumbImageUrl
+
+                        try self.context.save()
+                        RootViewController.current?.showToast(message: "favourite_item_added".i18n())
+                    } else {
+                        RootViewController.current?.showToast(message: "favourite_item_already_added".i18n())
+                    }
                 } catch {
-                    fatalError("\(error)")
+//                    fatalError("\(error)")
+                    RootViewController.current?.showToast(message: error.localizedDescription)
                 }
                 
             }
@@ -77,6 +133,7 @@ class AppCoreDataManager {
                     context.delete(item)
                 }
                 try self.context.save()
+                RootViewController.current?.showToast(message: "favourite_item_removed".i18n())
             } catch {
                 fatalError("Failed to fetch data: \(error)")
             }
@@ -92,6 +149,7 @@ class AppCoreDataManager {
                     context.delete(item)
                 }
                 try self.context.save()
+                RootViewController.current?.showToast(message: "favourite_item_removed".i18n())
             } catch {
                 fatalError("Failed to fetch data: \(error)")
             }
@@ -107,6 +165,7 @@ class AppCoreDataManager {
                     context.delete(item)
                 }
                 try self.context.save()
+                RootViewController.current?.showToast(message: "favourite_item_removed".i18n())
             } catch {
                 fatalError("Failed to fetch data: \(error)")
             }
@@ -155,4 +214,6 @@ class AppCoreDataManager {
         return array
 
     }
+    
+    
 }

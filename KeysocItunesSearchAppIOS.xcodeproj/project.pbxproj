@@ -58,12 +58,13 @@
 		21BDDF622AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF612AB1CC1A00BFF4B2 /* ITunesFavouriteBundleListViewController.swift */; };
 		21BDDF642AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF632AB1CC6600BFF4B2 /* ITunesFavouriteBundleListViewController.xib */; };
 		21BDDF662AB1D49100BFF4B2 /* KCUIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF652AB1D49100BFF4B2 /* KCUIBarButtonItem.swift */; };
+		21BDDF692AB1E80C00BFF4B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDF682AB1E80C00BFF4B2 /* SDWebImage */; };
 		21BDDF7A2AB545E400BFF4B2 /* ITunesSearchFilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF792AB545E400BFF4B2 /* ITunesSearchFilterListViewController.swift */; };
 		21BDDF7C2AB545EB00BFF4B2 /* ITunesSearchFilterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDF7B2AB545EB00BFF4B2 /* ITunesSearchFilterListViewController.xib */; };
 		21BDDF7E2AB5478D00BFF4B2 /* KCUIGenericPickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF7D2AB5478D00BFF4B2 /* KCUIGenericPickerCellViewModel.swift */; };
 		21BDDF822AB560D800BFF4B2 /* KCUISubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF812AB560D800BFF4B2 /* KCUISubtitleTableViewCell.swift */; };
 		21BDDF842AB56F6F00BFF4B2 /* KCUITableSectionHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDF832AB56F6F00BFF4B2 /* KCUITableSectionHeaderViewCell.swift */; };
-		21BDDF692AB1E80C00BFF4B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDF682AB1E80C00BFF4B2 /* SDWebImage */; };
+		21BDDF892AB578DD00BFF4B2 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDF882AB578DD00BFF4B2 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BDDF892AB578DD00BFF4B2 /* Toast in Frameworks */,
 				21BDDEA32AB0C46700BFF4B2 /* SDWebImage in Frameworks */,
 				21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */,
 			);
@@ -385,6 +387,7 @@
 			packageProductDependencies = (
 				21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */,
 				21BDDEA22AB0C46700BFF4B2 /* SDWebImage */,
+				21BDDF882AB578DD00BFF4B2 /* Toast */,
 			);
 			productName = KeysocItunesSearchAppIOS;
 			productReference = 21BDDE582AB074B500BFF4B2 /* KeysocItunesSearchAppIOS.app */;
@@ -466,6 +469,7 @@
 			packageReferences = (
 				21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */,
 				21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				21BDDF872AB578DD00BFF4B2 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 21BDDE592AB074B500BFF4B2 /* Products */;
 			projectDirPath = "";
@@ -929,6 +933,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		21BDDF872AB578DD00BFF4B2 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -946,6 +958,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		21BDDF882AB578DD00BFF4B2 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BDDF872AB578DD00BFF4B2 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 
