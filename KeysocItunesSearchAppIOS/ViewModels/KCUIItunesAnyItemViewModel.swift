@@ -8,6 +8,8 @@
 import Foundation
 import KeysocItunesSearchAPIServiceiOS_Swift
 
+
+/// Base view model for iTunes items
 class KCUIItunesAnyItemViewModel: NSObject {
     var _id: Int?
     

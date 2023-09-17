@@ -24,7 +24,10 @@ class KCUISongListCellHorizontal: UITableViewCell {
         selectionStyle = .none
     }
 
-    // Configure custom cell
+    /// Configure cell render with `KCUIItunesAnyItemViewModel`
+    ///
+    /// - Parameters:
+    ///   - viewModel: `KCUIItunesAnyItemViewModel`
     func configure(with viewModel: KCUIItunesAnyItemViewModel) {
         lblSongTitle.text = viewModel.title
         lblSongDesc.text = viewModel.desc

@@ -14,6 +14,10 @@ class KCUISegmentedControl: UISegmentedControl {
         }
     }
     
+    /// Used for setting localization keys for each segment button title, separated by ","
+    ///
+    /// Example input:
+    /// `Apple,Banana,Circle`
     @IBInspectable private var stringArrayInspectable: String {
         get {
             return segmentsLocalizationKeyArray.joined(separator: ",")

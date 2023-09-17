@@ -8,10 +8,18 @@
 import UIKit
 import KeysocItunesSearchAPIServiceiOS_Swift
 
+/// Generic picker view model for UITableViewCell
 class KCUIGenericPickerCellViewModel {
     
     typealias TA_onKCUIGenericPickerCellViewModelSelected = (() -> Void)
+
     
+    /// Cell type
+    ///
+    /// Cases:
+    ///   - pickerItem: for use in picker view, will display `checkmark` indicator for selected item(s)
+    ///   - actionItem: for use in action view, will display `disclosureIndicator` indicator, and will display intrinsic value in `detailTextView`
+    ///   - normalItem: for use in any view, will display no indicators or intrinsic values
     enum CellType {
         case pickerItem
         case actionItem
@@ -30,7 +38,13 @@ class KCUIGenericPickerCellViewModel {
     
 
     
-    
+    /// `init` used for any generic use
+    ///
+    /// Cases:
+    ///   - label: cell title
+    ///   - value: cell intrinsic value
+    ///   - cellType: cell type
+    ///   - onSelected: callback when the cell is being selected
     init(label: String?,
          value: String?,
          cellType: CellType,
@@ -43,6 +57,12 @@ class KCUIGenericPickerCellViewModel {
     }
     
     
+    /// `init` used by picker list `KCItunesParamCountry`
+    ///
+    /// Cases:
+    ///   - country: `KCItunesParamCountry`
+    ///   - cellType: cell type
+    ///   - onSelected: callback when the cell is being selected
     init(country: KCItunesParamCountry,
          cellType: CellType,
          onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
@@ -63,6 +83,12 @@ class KCUIGenericPickerCellViewModel {
     }
     
     
+    /// `init` used by picker list `KCItunesParamMediaType`
+    ///
+    /// Cases:
+    ///   - mediaType: `KCItunesParamMediaType`
+    ///   - cellType: cell type
+    ///   - onSelected: callback when the cell is being selected
     init(mediaType: KCItunesParamMediaType,
          cellType: CellType,
          onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
@@ -85,6 +111,12 @@ class KCUIGenericPickerCellViewModel {
     
     
     
+    /// `init` used by picker list `HistoryItunesSearch`
+    ///
+    /// Cases:
+    ///   - historyItunesSearch: `HistoryItunesSearch`
+    ///   - cellType: cell type
+    ///   - onSelected: callback when the cell is being selected
     init(historyItunesSearch: HistoryItunesSearch,
          cellType: CellType,
          onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
@@ -96,7 +128,11 @@ class KCUIGenericPickerCellViewModel {
     }
     
     
-    
+    /// Configure `UITableViewCell`'s display
+    ///
+    /// Parameters:
+    ///   - cell: target `UITableViewCell` to display
+    ///   - selectedPickerItemValue: selected value
     func fulfillCell(
         cell: UITableViewCell,
         selectedPickerItemValue: String? = nil

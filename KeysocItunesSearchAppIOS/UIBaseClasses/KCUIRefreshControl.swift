@@ -8,7 +8,13 @@
 import UIKit
 
 class KCUIRefreshControl: UIRefreshControl {
-    var localizationKey: String = "generic_pull_to_refresh"
+
+    /// Used for setting any specific localized text
+    @IBInspectable var localizationKey: String = "generic_pull_to_refresh" {
+        didSet {
+            updateText()
+        }
+    }
     
     override init() {
         super.init()

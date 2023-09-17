@@ -18,6 +18,14 @@ class KCUIGenericPickerViewController: KCUIViewController {
     private var getSelectedPickerItemValue: TA_GetSelectedPickerItemValue?
     private var onSelectPickerItemValue: TA_OnSelectPickerItemValue?
 
+    
+    /// `init` function of the generic picker view controller
+    ///
+    /// Parameters:
+    ///   - titleLocalizationKey: localization key for the view controller's title
+    ///   - pickerItemList: any picker item list of `KCUIGenericPickerCellViewModel`
+    ///   - getSelectedPickerItemValue: a callback function for `KCUIGenericPickerViewController` to obtain the selected item (i.e. the selected item value will always be obtained from the parent caller)
+    ///   - onSelectPickerItemValue: a callback function of its corresponding intrinsic value upon selection of a picker item
     init(
         titleLocalizationKey: String = "",
         pickerItemList: [KCUIGenericPickerCellViewModel],

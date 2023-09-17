@@ -12,6 +12,12 @@ class AppCoreDataManager {
     static let shared = AppCoreDataManager()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+
+    /// Add any item to FavouritesXXX
+    ///
+    /// - Parameters:
+    ///   - anyItem: `KCUIItunesAnyItemViewModel`
+    ///   - itemType: `ITunesMusicItemListViewController.ItemType`
     func itunesAnyItem_addToFavourites(
         anyItem: KCUIItunesAnyItemViewModel?,
         itemType: ITunesMusicItemListViewController.ItemType
@@ -124,6 +130,11 @@ class AppCoreDataManager {
     }
     
     
+    /// Delete any item from FavouritesXXX
+    ///
+    /// - Parameters:
+    ///   - id: `id` of the entity item
+    ///   - itemType: `ITunesMusicItemListViewController.ItemType`
     func itunesAnyItem_deleteFromFavourites(
         id: Int,
         itemType: ITunesMusicItemListViewController.ItemType
@@ -183,6 +194,12 @@ class AppCoreDataManager {
     }
 
     
+    /// Select list of FavouritesXXX
+    ///
+    /// - Parameters:
+    ///   - entityType: `FavouriteSong`, `FavouriteAlbum`, or `FavouriteArtist`
+    ///
+    /// - Returns: List of items of `entityType`
     func itunesAnyItem_selectFavorites<T: NSManagedObject>(
         entityType: T.Type
     ) -> [T] {
@@ -202,6 +219,13 @@ class AppCoreDataManager {
 
     
     
+    /// Select list of FavouritesXXX by `id`
+    ///
+    /// - Parameters:
+    ///   - id: `id` of entity items
+    ///   - entityType: `FavouriteSong`, `FavouriteAlbum`, or `FavouriteArtist`
+    ///
+    /// - Returns: List of items of `entityType`
     func itunesAnyItem_selectFavoritesById<T: NSManagedObject>(
         id: Int,
         entityType: T.Type
@@ -220,8 +244,10 @@ class AppCoreDataManager {
     }
     
     
-    
-    
+    /// Insert or delete any iTunes search history
+    ///
+    /// - Parameters:
+    ///   - text: search text
     func historyItunesSearch_upsert(
         text: String?
     ) {
@@ -253,6 +279,12 @@ class AppCoreDataManager {
     }
     
     
+    /// Select list of iTunes search history
+    ///
+    /// - Parameters:
+    ///   - entityType: `HistoryItunesSearch`
+    ///
+    /// - Returns: List of items of `entityType`
     func historyItunesSearch_select<T: NSManagedObject>(
         entityType: T.Type
     ) -> [T] {

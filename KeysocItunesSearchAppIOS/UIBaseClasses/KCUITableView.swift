@@ -8,8 +8,6 @@
 import UIKit
 
 class KCUITableView : UITableView {
-    @IBInspectable var localizationKey: String = ""
-
     override func awakeFromNib() {
         super.awakeFromNib()
         NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: NSNotification.Name(AppLanguageManager.kLanguageDidChangeKey), object: nil)

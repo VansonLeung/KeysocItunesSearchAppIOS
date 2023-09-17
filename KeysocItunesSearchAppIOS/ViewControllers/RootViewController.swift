@@ -10,6 +10,11 @@ import Toast
 
 class RootViewController : UINavigationController {
     
+    /// currently active / visible RootViewController
+    static var current: RootViewController?
+
+    
+    
     private var rootTabBarController: UITabBarController!
     
     private var vcSearch: ITunesSearchBundleListViewController!
@@ -19,9 +24,17 @@ class RootViewController : UINavigationController {
     private var vcSearchTbiLocalizedKey = "tbi_search"
     private var vcFavouritesTbiLocalizedKey = "tbi_favourites"
     private var vcSettingsTbiLocalizedKey = "tbi_settings"
-    
-    static var current: RootViewController?
 
+    
+    /// upon running `viewDidLoad`, `RootViewController` consists of this hierarchy of layers
+    ///
+    /// ```swift
+    /// -- self: `RootViewController`
+    /// ---- rootTabBarController: `UITabBarController`
+    /// ------ vcSearch: `ITunesSearchBundleListViewController`
+    /// ------ vcFavourites: `ITunesFavouriteBundleListViewController`
+    /// ------ vcSettings: `SettingsViewController`
+    /// ```
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,13 +89,13 @@ class RootViewController : UINavigationController {
         refreshTitle()
     }
     
-    func refreshTabBarItems() {
+    private func refreshTabBarItems() {
         vcSearch.tabBarItem = UITabBarItem(title: vcSearchTbiLocalizedKey.i18n(), image: UIImage(named: "ic_search"), selectedImage: nil)
         vcFavourites.tabBarItem = UITabBarItem(title: vcFavouritesTbiLocalizedKey.i18n(), image: UIImage(named: "ic_favourites"), selectedImage: nil)
         vcSettings.tabBarItem = UITabBarItem(title: vcSettingsTbiLocalizedKey.i18n(), image: UIImage(named: "ic_settings"), selectedImage: nil)
     }
     
-    func refreshTitle() {
+    private func refreshTitle() {
         if rootTabBarController.selectedViewController?.isKind(of: KCUIViewController.self) == true,
            let vc = rootTabBarController.selectedViewController as? KCUIViewController {
             rootTabBarController.title = vc.titleLocalizationKey.i18n()
@@ -94,8 +107,11 @@ class RootViewController : UINavigationController {
     }
     
     
-    
-    func showToast(message: String?) {
+    /// Shows a toast message on top of all the views in this view controller
+    ///
+    /// Parameters:
+    ///   - message: toast message to display
+    public func showToast(message: String?) {
         self.view.makeToast(message)
     }
     

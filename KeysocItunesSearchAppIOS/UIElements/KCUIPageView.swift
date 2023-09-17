@@ -87,6 +87,10 @@ class KCUIPageView: UIControl {
     
     
     
+    /// Add new page view
+    ///
+    /// - Parameters:
+    ///   - pageView: `UIView`
     func addPageView(_ pageView: UIView) {
         // Add a page view to the stackView
         pageViews.append(pageView)
@@ -104,7 +108,10 @@ class KCUIPageView: UIControl {
 
     
     
-    // Add a view controller as a page
+    /// Add new `UIViewController` as a new page
+    ///
+    /// - Parameters:
+    ///   - viewController: `UIViewController`
     func addPageViewController(_ viewController: UIViewController) {
         // Add the view controller's view to the scrollView
         pageViews.append(viewController.view)
@@ -124,14 +131,19 @@ class KCUIPageView: UIControl {
 
 extension KCUIPageView: UIScrollViewDelegate {
     
-    func goToPage(_ pageIndex: Int) {
+    /// Jump to page
+    ///
+    /// - Parameters:
+    ///   - pageIndex: target page index
+    ///   - animated: `Bool`
+    func goToPage(_ pageIndex: Int, animated: Bool = true) {
 
         isScrollDragEngaged = false
 
         // Scroll to a specific page
         let pageWidth = scrollView?.frame.width ?? 0
         let contentOffset = CGPoint(x: CGFloat(pageIndex) * pageWidth, y: 0)
-        scrollView?.setContentOffset(contentOffset, animated: true)
+        scrollView?.setContentOffset(contentOffset, animated: animated)
         
         if currentPage != pageIndex {
             currentPage = pageIndex

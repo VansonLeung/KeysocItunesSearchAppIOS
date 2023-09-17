@@ -8,6 +8,7 @@
 import Foundation
 import KeysocItunesSearchAPIServiceiOS_Swift
 
+/// Song view model for iTunes items
 class KCUIItunesItemSongViewModel: KCUIItunesAnyItemViewModel {
     
     var artistId: Int?

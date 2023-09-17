@@ -9,6 +9,12 @@ import Foundation
 
 var i18nPending: [String] = []
 
+/// Get the app current language.
+///
+/// - Parameters:
+///   - bundle: Bundle
+///
+/// - Returns: "en", "zh-Hant", or "zh-Hans"
 func GetCurrentLanguage(bundle : Bundle) -> String! {
     let language = UserDefaults.standard.string(forKey: "AppLanguage")
     if language != nil
@@ -25,6 +31,9 @@ func GetCurrentLanguage(bundle : Bundle) -> String! {
 
 extension String {
     
+    /// localizes the string according to the `AppLanguage` obtained via `GetCurrentLanguage(..)`
+    ///
+    /// - Returns: Localized string
     func i18n() -> String {
         
         var str = ""
@@ -44,7 +53,7 @@ extension String {
         
         if str.hasPrefix("**. ")
         {
-            i18nPending.append(str)
+//            i18nPending.append(str)
         }
 //        NSLog("i18n.....%@", str)
         return str

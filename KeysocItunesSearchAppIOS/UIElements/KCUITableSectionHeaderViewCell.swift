@@ -21,7 +21,7 @@ class KCUITableSectionHeaderViewCell : UITableViewHeaderFooterView {
         configure()
     }
     
-    func configure() {
+    private func configure() {
         if self.label == nil {
             let label = UILabel()
 

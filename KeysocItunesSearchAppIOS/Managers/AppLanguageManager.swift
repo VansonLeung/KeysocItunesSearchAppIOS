@@ -16,6 +16,14 @@ class AppLanguageManager {
 
     static let kLanguageDidChangeKey = "LanguageDidChange"
 
+    
+    
+    /// Get the app current language.
+    ///
+    /// - Parameters:
+    ///   - bundle: Bundle
+    ///
+    /// - Returns: "en", "zh-Hant", or "zh-Hans"
     var currentLanguage: String {
         get {
             return (UserDefaults.standard.string(forKey: kAppLanguageKey)) ?? "en" // Default to English
@@ -26,6 +34,10 @@ class AppLanguageManager {
         }
     }
     
+    
+    /// Get the app current language for use in ITunes search API.
+    ///
+    /// - Returns: "en_us", "zh_hk", or "zh_cn"
     var currentKItunesSearchAPILanguage: String {
         let lang = currentLanguage
         if lang == "en" {
@@ -40,6 +52,13 @@ class AppLanguageManager {
         return "en_us"
     }
     
+    
+    /// Get the app current language.
+    ///
+    /// A notification `AppLanguageManager.kLanguageDidChangeKey` will be emitted upon a successful language change
+    ///
+    /// - Parameters:
+    ///   - language: target language: "en", "zh-Hant", "zh-Hans"
     func changeAppLanguage(language: String) {
         AppLanguageManager.shared.currentLanguage = language
         NotificationCenter.default.post(name: NSNotification.Name(AppLanguageManager.kLanguageDidChangeKey), object: nil)

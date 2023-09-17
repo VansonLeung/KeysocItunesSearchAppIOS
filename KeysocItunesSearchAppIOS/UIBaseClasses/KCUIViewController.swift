@@ -8,14 +8,28 @@
 import UIKit
 
 class KCUIViewController : UIViewController {
-    public var looseNavigationController: UINavigationController?
+    private var looseNavigationController: UINavigationController?
     
     var getNavigationController: UINavigationController? {
         return navigationController ?? looseNavigationController
     }
     
-    var overrideTitleLocalizationKey: String? = nil
+    /// Used for overriding navigation title localized text (first priority)
+    var overrideTitleLocalizationKey: String? = nil {
+        didSet {
+            updateText()
+        }
+    }
     
+    /// Used in custom KCUIViewController overriding navigation title localized text (second priority)
+    ///
+    /// Example usage:
+    ///
+    /// ```swift
+    /// override var titleLocalizationKey: String {
+    ///    return "New View Controller"
+    /// }
+    /// ```
     var titleLocalizationKey: String {
         get {
             return ""

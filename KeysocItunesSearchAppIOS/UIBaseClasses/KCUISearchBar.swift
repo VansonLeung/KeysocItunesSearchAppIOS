@@ -8,7 +8,13 @@
 import UIKit
 
 class KCUISearchBar: UISearchBar {
-    var placeholderLocalizationKey: String = "generic_search_by_keywords"
+
+    /// Used for setting any specific localized text
+    var placeholderLocalizationKey: String = "generic_search_by_keywords" {
+        didSet {
+            updateText()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

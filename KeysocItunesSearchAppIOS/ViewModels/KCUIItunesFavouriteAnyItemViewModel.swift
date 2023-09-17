@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Favourites view model for iTunes items
 class KCUIItunesFavouriteAnyItemViewModel: KCUIItunesAnyItemViewModel {
     
     var _id32: Int32?

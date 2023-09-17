@@ -8,7 +8,13 @@
 import UIKit
 
 class KCUILabel : UILabel {
-    @IBInspectable var localizationKey: String = ""
+
+    /// Used for setting any specific localized text
+    @IBInspectable var localizationKey: String = "" {
+        didSet {
+            updateText()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

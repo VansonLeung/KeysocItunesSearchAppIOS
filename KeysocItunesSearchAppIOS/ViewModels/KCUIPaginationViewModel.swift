@@ -16,11 +16,20 @@ class KCUIPaginationViewModel {
     var refreshHash: Int = 1
     
     
+    /// State function to determine whether the pagination view model can load next page
     func isLoadNextPageAvailable() -> Bool {
         return !isEnded && !isLoading && !isRefreshing && !isError
     }
     
     
+    /// Prepare the pagination view model to load the next request (next page or refresh)
+    ///
+    /// - Parameters:
+    ///   - isRefresh: whether the next request is refresh or load-more
+    ///   - completion: callback of:
+    ///     - shouldFetch: `Bool` whether the next request should be called or not
+    ///     - curRefreshHash: `Int` to identify each refresh action
+    ///     - page: `Int` to return the current page (or return 0 for refresh action)
     func onPrepareFetch(
         isRefresh: Bool,
         completion: @escaping (_ shouldFetch: Bool, _ curRefreshHash: Int, _ page: Int) -> Void)
@@ -51,6 +60,14 @@ class KCUIPaginationViewModel {
     
     
     
+    /// Post-process the pagination view model to end the current request
+    ///
+    /// - Parameters:
+    ///   - curRefreshHash: input of `curRefreshHash` from `onPrepareFetch(..)`
+    ///   - isRefresh: input of `isRefresh` from `onPrepareFetch(..)`
+    ///   - isError: `Bool` to indicate if the request has error (e.g. API error)
+    ///   - isEnded: `Bool` to indicate if the request has ended (e.g. last page has reached, no more results)
+    ///   - completion: callback, post-processing is done
     func onPostFetch(
         curRefreshHash: Int,
         isRefresh: Bool,

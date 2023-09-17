@@ -9,6 +9,13 @@ import Foundation
 
 class DateHelper: NSObject {
     
+    /// Obtain `Date` from string
+    ///
+    /// - Parameters:
+    ///   - str: formatted date
+    ///   - dateFormat: format, default: "yyyy-MM-ddTHH:mm:ssZ"
+    ///
+    /// - Returns: date
     class func dateParse(str : String?, dateFormat: String = "yyyy-MM-ddTHH:mm:ssZ") -> Date?
     {
         if str == nil
@@ -22,6 +29,14 @@ class DateHelper: NSObject {
         return date
     }
     
+    
+    /// Obtain formatted date from `Date`
+    ///
+    /// - Parameters:
+    ///   - date: `Date`
+    ///   - dateFormat: format, default: "yyyy-MM-dd"
+    ///
+    /// - Returns: formatted date `String`
     class func dateFormat(date : Date?, dateFormat: String = "yyyy-MM-dd") -> String?
     {
         if date == nil
@@ -34,6 +49,14 @@ class DateHelper: NSObject {
         return str
     }
     
+    
+    /// Obtain formatted and localized date from `Date`
+    ///
+    /// - Parameters:
+    ///   - date: `Date`
+    ///   - dateFormat: format, default: "EEEE MMMM d yyyy"
+    ///
+    /// - Returns: formatted and localized date `String`
     class func dateFormatLocalized(date : Date?, dateFormat: String = "EEEE MMMM d yyyy") -> String?
     {
         if date == nil
