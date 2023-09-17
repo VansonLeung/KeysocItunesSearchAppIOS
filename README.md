@@ -129,13 +129,27 @@ The MVVM architecture separates the concerns of data retrieval, presentation log
 - The app includes pagination for loading additional search results.
 - `KCUIPaginationViewModel` is used to store the pagination state and act as a state reducer:
   ```swift
-  - class KCUIPaginationViewModel {
-      var currentPage = 0
-      var isLoading = false
-      var isRefreshing = false
-      var isEnded = false
-      var isError = false
-      var refreshHash: Int = 1
+  class KCUIPaginationViewModel {
+    
+    /// current page of the list data fetch
+    var currentPage = 0
+    
+    /// loading busy status
+    var isLoading = false
+    
+    /// refreshing busy status
+    var isRefreshing = false
+    
+    /// whether the list data is ended
+    var isEnded = false
+    
+    /// whether the list data encounters an error
+    var isError = false
+    
+    /// used for identifying each refresh action
+    var refreshHash: Int = 1
+
+  ...
   ...
   ```
 - The `scrollViewDidScroll` delegate method is used to detect if the user has scrolled to the bottom of the list.
