@@ -20,6 +20,16 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
 4. Or, launch tests in `KeysocItunesSearchAppIOSUITests`
 
 
+## Project modules / dependencies
+
+- [KeysocItunesSearchAPIServiceiOS-Swift](https://github.com/VansonLeung/KeysocItunesSearchAPIServiceiOS-Swift)
+
+- [SDWebImage](https://github.com/SDWebImage/SDWebImage)
+
+- [Toast-Swift](https://github.com/scalessec/Toast-Swift)
+
+
+
 ## App Architecture
 
 ![app_architecture drawio](https://github.com/VansonLeung/KeysocItunesSearchAppIOS/assets/1129695/3dd69073-dd34-4f21-bf6e-be0b8a36ddf1)
