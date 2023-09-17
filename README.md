@@ -6,4 +6,4 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS/assets/1129695/07f3b490-
 
 ## iOS target OS version
 
-- 13.0
+- 11.0
