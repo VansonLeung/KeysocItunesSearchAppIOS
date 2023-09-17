@@ -23,7 +23,7 @@ class DateHelper: NSObject {
             return nil
         }
         
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         let date = dateFormatter.date(from: str!)
         return date
@@ -43,7 +43,7 @@ class DateHelper: NSObject {
         {
             return ""
         }
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         let str = dateFormatter.string(from: date!)
         return str
@@ -63,7 +63,7 @@ class DateHelper: NSObject {
         {
             return ""
         }
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: GetCurrentLanguage(bundle: Bundle.main))
         dateFormatter.setLocalizedDateFormatFromTemplate(dateFormat)
         let str = dateFormatter.string(from: date!)
