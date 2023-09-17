@@ -13,7 +13,6 @@
 		211AC5F82AB6D3D800BD3783 /* ITunesSearchHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AC5F72AB6D3D700BD3783 /* ITunesSearchHistoryListViewController.swift */; };
 		211AC5FA2AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */; };
 		21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */; };
-		21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */; };
 		21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE612AB074B500BFF4B2 /* Main.storyboard */; };
 		21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE642AB074B700BFF4B2 /* Assets.xcassets */; };
 		21BDDE682AB074B700BFF4B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE662AB074B700BFF4B2 /* LaunchScreen.storyboard */; };
@@ -93,7 +92,6 @@
 		211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesSearchHistoryListViewController.xib; sourceTree = "<group>"; };
 		21BDDE582AB074B500BFF4B2 /* KeysocItunesSearchAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeysocItunesSearchAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		21BDDE622AB074B500BFF4B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21BDDE642AB074B700BFF4B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21BDDE672AB074B700BFF4B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				21BDDE932AB0B55000BFF4B2 /* ViewModels */,
 				21BDDE922AB0B54800BFF4B2 /* ViewControllers */,
 				21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */,
-				21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */,
 				21BDDE612AB074B500BFF4B2 /* Main.storyboard */,
 				21BDDE642AB074B700BFF4B2 /* Assets.xcassets */,
 				21BDDE662AB074B700BFF4B2 /* LaunchScreen.storyboard */,
@@ -557,7 +554,6 @@
 				21BDDED02AB1970400BFF4B2 /* ITunesMusicItemListViewController.swift in Sources */,
 				21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */,
 				21BDDEE32AB1AAD200BFF4B2 /* KCUITableView.swift in Sources */,
-				21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */,
 				21BDDEE72AB1B27300BFF4B2 /* KCUIViewController.swift in Sources */,
 				21BDDEE12AB1A97E00BFF4B2 /* Date+DateHelper.swift in Sources */,
 				21BDDEED2AB1B7AB00BFF4B2 /* SettingsLanguagePickerViewController.swift in Sources */,
@@ -692,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -747,7 +743,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

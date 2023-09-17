@@ -33,7 +33,7 @@ class ITunesSearchHistoryListViewController : UIViewController {
         tableView?.register(KCUISubtitleTableViewCell.self, forCellReuseIdentifier: "Cell")
         
         tableView?.backgroundView = UIView()
-        tableView?.backgroundView?.backgroundColor = .secondaryLabel
+        tableView?.backgroundView?.backgroundColor = .init(white: 0.5, alpha: 0.5)
         tableView?.backgroundView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onClickTableViewEmptySpace)))
     }
     
