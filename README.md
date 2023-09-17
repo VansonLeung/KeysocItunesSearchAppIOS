@@ -22,7 +22,7 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
 
 ## App Architecture
 
-![app_architecture drawio](https://github.com/VansonLeung/KeysocItunesSearchAppIOS/assets/1129695/426391b0-e716-455a-bbab-49ec38b90bf3)
+![app_architecture drawio](https://github.com/VansonLeung/KeysocItunesSearchAppIOS/assets/1129695/3dd69073-dd34-4f21-bf6e-be0b8a36ddf1)
 
 
 ## App MVVM flow
