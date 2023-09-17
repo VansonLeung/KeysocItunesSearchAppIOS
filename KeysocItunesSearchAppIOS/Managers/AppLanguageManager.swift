@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeysocItunesSearchAPIServiceiOS_Swift
 
 
 class AppLanguageManager {
@@ -41,15 +42,15 @@ class AppLanguageManager {
     var currentKItunesSearchAPILanguage: String {
         let lang = currentLanguage
         if lang == "en" {
-            return "en_us"
+            return KCItunesParamLangManager.shared.LangListArray[0].val ?? "en_us"
         }
         if lang == "zh-Hant" {
-            return "zh_hk"
+            return KCItunesParamLangManager.shared.LangListArray[1].val ?? "en_us"
         }
         if lang == "zh-Hans" {
-            return "zh_cn"
+            return KCItunesParamLangManager.shared.LangListArray[2].val ?? "en_us"
         }
-        return "en_us"
+        return KCItunesParamLangManager.shared.LangListArray[0].val ?? "en_us"
     }
     
     

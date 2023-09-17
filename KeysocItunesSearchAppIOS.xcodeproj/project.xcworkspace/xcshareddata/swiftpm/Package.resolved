@@ -3,10 +3,10 @@
     {
       "identity" : "keysocitunessearchapiserviceios-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.com/vanson1/keysocitunessearchapiserviceios-swift.git",
+      "location" : "https://github.com/VansonLeung/KeysocItunesSearchAPIServiceiOS-Swift",
       "state" : {
         "branch" : "main",
-        "revision" : "4645e58a6ff2a8ab7a372ba5a15fcb70670de3d7"
+        "revision" : "c53ed5184352b0f01fff8285fecea33c096d1d82"
       }
     },
     {

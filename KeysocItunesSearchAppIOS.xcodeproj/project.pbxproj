@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2117C5862AB6F43C00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 2117C5852AB6F43C00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */; };
+		2117C5882AB6F77000AC1793 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2117C5872AB6F77000AC1793 /* Toast */; };
+		2117C58A2AB6F77B00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 2117C5892AB6F77B00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */; };
 		211AC5F82AB6D3D800BD3783 /* ITunesSearchHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AC5F72AB6D3D700BD3783 /* ITunesSearchHistoryListViewController.swift */; };
 		211AC5FA2AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */; };
 		21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */; };
@@ -17,7 +20,6 @@
 		21BDDE732AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE722AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.swift */; };
 		21BDDE7D2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7C2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITests.swift */; };
 		21BDDE7F2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE7E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSUITestsLaunchTests.swift */; };
-		21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */; };
 		21BDDE952AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE942AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift */; };
 		21BDDE992AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE982AB0C08F00BFF4B2 /* ITunesMusicDetailsViewController.swift */; };
 		21BDDE9E2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE9D2AB0C31700BFF4B2 /* KCUISongListCellHorizontal.swift */; };
@@ -158,7 +160,7 @@
 			files = (
 				21BDDF892AB578DD00BFF4B2 /* Toast in Frameworks */,
 				21BDDEA32AB0C46700BFF4B2 /* SDWebImage in Frameworks */,
-				21BDDE912AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */,
+				2117C5862AB6F43C00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2117C5882AB6F77000AC1793 /* Toast in Frameworks */,
 				21BDDF692AB1E80C00BFF4B2 /* SDWebImage in Frameworks */,
+				2117C58A2AB6F77B00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,9 +395,9 @@
 			);
 			name = KeysocItunesSearchAppIOS;
 			packageProductDependencies = (
-				21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */,
 				21BDDEA22AB0C46700BFF4B2 /* SDWebImage */,
 				21BDDF882AB578DD00BFF4B2 /* Toast */,
+				2117C5852AB6F43C00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */,
 			);
 			productName = KeysocItunesSearchAppIOS;
 			productReference = 21BDDE582AB074B500BFF4B2 /* KeysocItunesSearchAppIOS.app */;
@@ -415,6 +419,8 @@
 			name = KeysocItunesSearchAppIOSTests;
 			packageProductDependencies = (
 				21BDDF682AB1E80C00BFF4B2 /* SDWebImage */,
+				2117C5872AB6F77000AC1793 /* Toast */,
+				2117C5892AB6F77B00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */,
 			);
 			productName = KeysocItunesSearchAppIOSTests;
 			productReference = 21BDDE6E2AB074B700BFF4B2 /* KeysocItunesSearchAppIOSTests.xctest */;
@@ -473,9 +479,9 @@
 			);
 			mainGroup = 21BDDE4F2AB074B500BFF4B2;
 			packageReferences = (
-				21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */,
 				21BDDEA12AB0C46700BFF4B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				21BDDF872AB578DD00BFF4B2 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				2117C5842AB6F43C00AC1793 /* XCRemoteSwiftPackageReference "KeysocItunesSearchAPIServiceiOS-Swift" */,
 			);
 			productRefGroup = 21BDDE592AB074B500BFF4B2 /* Products */;
 			projectDirPath = "";
@@ -758,6 +764,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWDY88PP84;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeysocItunesSearchAppIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KC Itunes Search";
@@ -790,6 +797,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LWDY88PP84;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeysocItunesSearchAppIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KC Itunes Search";
@@ -929,9 +937,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */ = {
+		2117C5842AB6F43C00AC1793 /* XCRemoteSwiftPackageReference "KeysocItunesSearchAPIServiceiOS-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitlab.com/vanson1/keysocitunessearchapiserviceios-swift.git";
+			repositoryURL = "https://github.com/VansonLeung/KeysocItunesSearchAPIServiceiOS-Swift";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -956,9 +964,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		21BDDE902AB09FB100BFF4B2 /* KeysocItunesSearchAPIServiceiOS-Swift */ = {
+		2117C5852AB6F43C00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21BDDE8F2AB09FB100BFF4B2 /* XCRemoteSwiftPackageReference "keysocitunessearchapiserviceios-swift" */;
+			package = 2117C5842AB6F43C00AC1793 /* XCRemoteSwiftPackageReference "KeysocItunesSearchAPIServiceiOS-Swift" */;
+			productName = "KeysocItunesSearchAPIServiceiOS-Swift";
+		};
+		2117C5872AB6F77000AC1793 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BDDF872AB578DD00BFF4B2 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		2117C5892AB6F77B00AC1793 /* KeysocItunesSearchAPIServiceiOS-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2117C5842AB6F43C00AC1793 /* XCRemoteSwiftPackageReference "KeysocItunesSearchAPIServiceiOS-Swift" */;
 			productName = "KeysocItunesSearchAPIServiceiOS-Swift";
 		};
 		21BDDEA22AB0C46700BFF4B2 /* SDWebImage */ = {
