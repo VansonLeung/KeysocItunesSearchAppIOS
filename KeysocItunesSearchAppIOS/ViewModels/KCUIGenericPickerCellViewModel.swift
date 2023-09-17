@@ -15,6 +15,7 @@ class KCUIGenericPickerCellViewModel {
     enum CellType {
         case pickerItem
         case actionItem
+        case normalItem
     }
     
     
@@ -83,6 +84,19 @@ class KCUIGenericPickerCellViewModel {
     
     
     
+    
+    init(historyItunesSearch: HistoryItunesSearch,
+         cellType: CellType,
+         onSelected: TA_onKCUIGenericPickerCellViewModelSelected? = nil)
+    {
+        self.label = historyItunesSearch.text
+        self.value = historyItunesSearch.text
+        self.onSelected = onSelected
+        self.cellType = cellType
+    }
+    
+    
+    
     func fulfillCell(
         cell: UITableViewCell,
         selectedPickerItemValue: String? = nil
@@ -106,6 +120,12 @@ class KCUIGenericPickerCellViewModel {
             cell.detailTextLabel?.text = selectedPickerItemValue ?? ""
             cell.accessoryType = .disclosureIndicator
 
+        case .normalItem:
+            
+            cell.textLabel?.text = label ?? ""
+            cell.detailTextLabel?.text = nil
+            cell.accessoryType = .none
+            
         }
     }
     

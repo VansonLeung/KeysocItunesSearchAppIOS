@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="pageView" destination="pq1-XQ-uwn" id="nrz-ca-jlY"/>
                 <outlet property="searchBar" destination="Il5-gt-Epa" id="NRK-sf-nKz"/>
+                <outlet property="searchHistoryContainer" destination="GAe-qq-y6U" id="CT8-aK-69H"/>
                 <outlet property="segmentedControl" destination="jxn-er-30B" id="WB5-qB-Ydo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="oRK-OP-FeL"/>
             </connections>
@@ -40,63 +41,88 @@
                                 <constraint firstItem="Il5-gt-Epa" firstAttribute="leading" secondItem="Cgf-Gz-MNO" secondAttribute="leading" id="rdB-48-QGv"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sF-NM-dap">
-                            <rect key="frame" x="0.0" y="64" width="393" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njl-4z-aL8">
+                            <rect key="frame" x="0.0" y="64" width="393" height="695"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jxn-er-30B" customClass="KCUISegmentedControl" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="0.0" width="377" height="51"/>
-                                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
-                                    <segments>
-                                        <segment title="Songs"/>
-                                        <segment title="Albums"/>
-                                        <segment title="Artists"/>
-                                    </segments>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="stringArrayInspectable" value="seg_songs,seg_albums,seg_artists"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="r2J-3n-WqC"/>
-                                    </connections>
-                                </segmentedControl>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="EpD-fM-BvS"/>
-                                <constraint firstAttribute="bottom" secondItem="jxn-er-30B" secondAttribute="bottom" id="Nal-mZ-WaI"/>
-                                <constraint firstAttribute="trailing" secondItem="jxn-er-30B" secondAttribute="trailing" constant="8" id="XRO-44-f26"/>
-                                <constraint firstItem="jxn-er-30B" firstAttribute="leading" secondItem="9sF-NM-dap" secondAttribute="leading" constant="8" id="kou-pA-Ubi"/>
-                                <constraint firstItem="jxn-er-30B" firstAttribute="top" secondItem="9sF-NM-dap" secondAttribute="top" id="pLs-wf-d7v"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="KDb-ws-1sJ">
-                            <rect key="frame" x="0.0" y="122" width="393" height="637"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-iO-3VQ" userLabel="Container View">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="637"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7DX-pa-FQC">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="695"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-XQ-uwn" customClass="KCUIPageView" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="637"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="pageViewValueChanged:" destination="-1" eventType="valueChanged" id="wsr-2s-l3Y"/>
-                                            </connections>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sF-NM-dap">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jxn-er-30B" customClass="KCUISegmentedControl" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="377" height="51"/>
+                                                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                    <segments>
+                                                        <segment title="Songs"/>
+                                                        <segment title="Albums"/>
+                                                        <segment title="Artists"/>
+                                                    </segments>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringArrayInspectable" value="seg_songs,seg_albums,seg_artists"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="r2J-3n-WqC"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="EpD-fM-BvS"/>
+                                                <constraint firstAttribute="bottom" secondItem="jxn-er-30B" secondAttribute="bottom" id="Nal-mZ-WaI"/>
+                                                <constraint firstAttribute="trailing" secondItem="jxn-er-30B" secondAttribute="trailing" constant="8" id="XRO-44-f26"/>
+                                                <constraint firstItem="jxn-er-30B" firstAttribute="leading" secondItem="9sF-NM-dap" secondAttribute="leading" constant="8" id="kou-pA-Ubi"/>
+                                                <constraint firstItem="jxn-er-30B" firstAttribute="top" secondItem="9sF-NM-dap" secondAttribute="top" id="pLs-wf-d7v"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="KDb-ws-1sJ">
+                                            <rect key="frame" x="0.0" y="50" width="393" height="645"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-iO-3VQ" userLabel="Container View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="645"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-XQ-uwn" customClass="KCUIPageView" customModule="KeysocItunesSearchAppIOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="645"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <connections>
+                                                                <action selector="pageViewValueChanged:" destination="-1" eventType="valueChanged" id="wsr-2s-l3Y"/>
+                                                            </connections>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="pq1-XQ-uwn" secondAttribute="bottom" id="AYq-Du-HwG"/>
+                                                        <constraint firstItem="pq1-XQ-uwn" firstAttribute="top" secondItem="xcD-iO-3VQ" secondAttribute="top" id="Jch-2T-bM5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pq1-XQ-uwn" secondAttribute="trailing" id="Pz5-aj-54R"/>
+                                                        <constraint firstItem="pq1-XQ-uwn" firstAttribute="leading" secondItem="xcD-iO-3VQ" secondAttribute="leading" id="RlS-Mq-kp2"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xcD-iO-3VQ" secondAttribute="trailing" id="ARU-pO-03K"/>
+                                                <constraint firstAttribute="bottom" secondItem="xcD-iO-3VQ" secondAttribute="bottom" id="E9H-4n-xWL"/>
+                                                <constraint firstItem="xcD-iO-3VQ" firstAttribute="leading" secondItem="KDb-ws-1sJ" secondAttribute="leading" id="nkY-Iy-Ui7"/>
+                                                <constraint firstItem="xcD-iO-3VQ" firstAttribute="top" secondItem="KDb-ws-1sJ" secondAttribute="top" id="w2M-Tb-cfE"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="pq1-XQ-uwn" secondAttribute="bottom" id="AYq-Du-HwG"/>
-                                        <constraint firstItem="pq1-XQ-uwn" firstAttribute="top" secondItem="xcD-iO-3VQ" secondAttribute="top" id="Jch-2T-bM5"/>
-                                        <constraint firstAttribute="trailing" secondItem="pq1-XQ-uwn" secondAttribute="trailing" id="Pz5-aj-54R"/>
-                                        <constraint firstItem="pq1-XQ-uwn" firstAttribute="leading" secondItem="xcD-iO-3VQ" secondAttribute="leading" id="RlS-Mq-kp2"/>
-                                    </constraints>
+                                </stackView>
+                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAe-qq-y6U">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="695"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="xcD-iO-3VQ" secondAttribute="trailing" id="ARU-pO-03K"/>
-                                <constraint firstAttribute="bottom" secondItem="xcD-iO-3VQ" secondAttribute="bottom" id="E9H-4n-xWL"/>
-                                <constraint firstItem="xcD-iO-3VQ" firstAttribute="leading" secondItem="KDb-ws-1sJ" secondAttribute="leading" id="nkY-Iy-Ui7"/>
-                                <constraint firstItem="xcD-iO-3VQ" firstAttribute="top" secondItem="KDb-ws-1sJ" secondAttribute="top" id="w2M-Tb-cfE"/>
+                                <constraint firstAttribute="bottom" secondItem="GAe-qq-y6U" secondAttribute="bottom" id="3rx-D3-78e"/>
+                                <constraint firstAttribute="trailing" secondItem="7DX-pa-FQC" secondAttribute="trailing" id="DIm-Qa-eF9"/>
+                                <constraint firstItem="GAe-qq-y6U" firstAttribute="leading" secondItem="njl-4z-aL8" secondAttribute="leading" id="Dy5-c8-sqa"/>
+                                <constraint firstAttribute="bottom" secondItem="7DX-pa-FQC" secondAttribute="bottom" id="Ii2-8I-5bx"/>
+                                <constraint firstAttribute="trailing" secondItem="GAe-qq-y6U" secondAttribute="trailing" id="R1O-qz-gK7"/>
+                                <constraint firstItem="7DX-pa-FQC" firstAttribute="leading" secondItem="njl-4z-aL8" secondAttribute="leading" id="Sng-mn-5U8"/>
+                                <constraint firstItem="GAe-qq-y6U" firstAttribute="top" secondItem="njl-4z-aL8" secondAttribute="top" id="Zus-qb-YrI"/>
+                                <constraint firstItem="7DX-pa-FQC" firstAttribute="top" secondItem="njl-4z-aL8" secondAttribute="top" id="uDk-lz-GG6"/>
                             </constraints>
                         </view>
                     </subviews>

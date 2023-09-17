@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211AC5F82AB6D3D800BD3783 /* ITunesSearchHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AC5F72AB6D3D700BD3783 /* ITunesSearchHistoryListViewController.swift */; };
+		211AC5FA2AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */; };
 		21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */; };
 		21BDDE5E2AB074B500BFF4B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */; };
 		21BDDE632AB074B500BFF4B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BDDE612AB074B500BFF4B2 /* Main.storyboard */; };
@@ -85,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211AC5F72AB6D3D700BD3783 /* ITunesSearchHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchHistoryListViewController.swift; sourceTree = "<group>"; };
+		211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesSearchHistoryListViewController.xib; sourceTree = "<group>"; };
 		21BDDE582AB074B500BFF4B2 /* KeysocItunesSearchAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeysocItunesSearchAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BDDE5B2AB074B500BFF4B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BDDE5D2AB074B500BFF4B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 				21BDDEAB2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib */,
 				21BDDF792AB545E400BFF4B2 /* ITunesSearchFilterListViewController.swift */,
 				21BDDF7B2AB545EB00BFF4B2 /* ITunesSearchFilterListViewController.xib */,
+				211AC5F72AB6D3D700BD3783 /* ITunesSearchHistoryListViewController.swift */,
+				211AC5F92AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib */,
 			);
 			path = ITunesSearch;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				21BDDF1F2AB1C31D00BFF4B2 /* ITunesMusicItemFavouriteListViewController.xib in Resources */,
 				21BDDF7C2AB545EB00BFF4B2 /* ITunesSearchFilterListViewController.xib in Resources */,
 				21BDDEAC2AB0D2D500BFF4B2 /* ITunesMusicDetailsViewController.xib in Resources */,
+				211AC5FA2AB6D3EF00BD3783 /* ITunesSearchHistoryListViewController.xib in Resources */,
 				21BDDEB52AB0E4E700BFF4B2 /* Localizable.strings in Resources */,
 				21BDDE652AB074B700BFF4B2 /* Assets.xcassets in Resources */,
 				21BDDEA02AB0C32000BFF4B2 /* KCUISongListCellHorizontal.xib in Resources */,
@@ -528,6 +535,7 @@
 				21BDDED62AB1990B00BFF4B2 /* KCUIItunesItemAlbumViewModel.swift in Sources */,
 				21BDDEE52AB1ABF900BFF4B2 /* RootViewController.swift in Sources */,
 				21BDDE952AB0BD1400BFF4B2 /* KCUIItunesAnyItemViewModel.swift in Sources */,
+				211AC5F82AB6D3D800BD3783 /* ITunesSearchHistoryListViewController.swift in Sources */,
 				21BDDE5C2AB074B500BFF4B2 /* AppDelegate.swift in Sources */,
 				21BDDF7E2AB5478D00BFF4B2 /* KCUIGenericPickerCellViewModel.swift in Sources */,
 				21BDDF822AB560D800BFF4B2 /* KCUISubtitleTableViewCell.swift in Sources */,

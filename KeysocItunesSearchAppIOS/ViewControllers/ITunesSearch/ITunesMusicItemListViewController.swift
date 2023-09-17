@@ -92,7 +92,7 @@ class ITunesMusicItemListViewController : UIViewController {
     }
     
     
-    func fetchSongs(isRefresh: Bool = false) {
+    private func fetchSongs(isRefresh: Bool = false) {
         paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
             [weak self] shouldFetch, curRefreshHash, page in
             
@@ -103,7 +103,8 @@ class ITunesMusicItemListViewController : UIViewController {
                 limit: self?.itemsPerPage ?? 1,
                 offset: page * (self?.itemsPerPage ?? 0),
                 mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue
+                country: self?.selectedCountryValue,
+                lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
             ) { [weak self] result in
                 switch result {
                 case .success(let songs):
@@ -119,6 +120,7 @@ class ITunesMusicItemListViewController : UIViewController {
                             self?.tableView?.refreshControl?.endRefreshing()
                             // Refresh the viewmodel list
                             self?.itemViewModels.removeAll()
+                            self?.tableView?.setContentOffset(.zero, animated: false)
                         }
                         
                         // Append the viewmodel list
@@ -148,7 +150,7 @@ class ITunesMusicItemListViewController : UIViewController {
         }
     }
     
-    func fetchArtists(isRefresh: Bool = false) {
+    private func fetchArtists(isRefresh: Bool = false) {
         paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
             [weak self] shouldFetch, curRefreshHash, page in
             
@@ -159,7 +161,8 @@ class ITunesMusicItemListViewController : UIViewController {
                 limit: self?.itemsPerPage ?? 1,
                 offset: page * (self?.itemsPerPage ?? 0),
                 mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue
+                country: self?.selectedCountryValue,
+                lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
             ) { [weak self] result in
                 switch result {
                 case .success(let artists):
@@ -175,6 +178,7 @@ class ITunesMusicItemListViewController : UIViewController {
                             self?.tableView?.refreshControl?.endRefreshing()
                             // Refresh the viewmodel list
                             self?.itemViewModels.removeAll()
+                            self?.tableView?.setContentOffset(.zero, animated: false)
                         }
                         
                         // Append the viewmodel list
@@ -204,7 +208,7 @@ class ITunesMusicItemListViewController : UIViewController {
         }
     }
     
-    func fetchAlbums(isRefresh: Bool = false) {
+    private func fetchAlbums(isRefresh: Bool = false) {
         paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
             [weak self] shouldFetch, curRefreshHash, page in
             
@@ -215,7 +219,8 @@ class ITunesMusicItemListViewController : UIViewController {
                 limit: self?.itemsPerPage ?? 1,
                 offset: page * (self?.itemsPerPage ?? 0),
                 mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue
+                country: self?.selectedCountryValue,
+                lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
             ) { [weak self] result in
                 switch result {
                 case .success(let albums):
@@ -231,6 +236,7 @@ class ITunesMusicItemListViewController : UIViewController {
                             self?.tableView?.refreshControl?.endRefreshing()
                             // Refresh the viewmodel list
                             self?.itemViewModels.removeAll()
+                            self?.tableView?.setContentOffset(.zero, animated: false)
                         }
                         
                         // Append the viewmodel list
@@ -261,14 +267,14 @@ class ITunesMusicItemListViewController : UIViewController {
     }
     
     
-    func refreshState() {
+    private func refreshState() {
         DispatchQueue.main.async {
             // todo: refresh tableview and loading screen visibility
         }
     }
     
     
-    func reloadList() {
+    private func reloadList() {
         DispatchQueue.main.async {
             self.tableView?.reloadData()
         }
@@ -284,7 +290,7 @@ extension ITunesMusicItemListViewController: UITableViewDelegate, UITableViewDat
         let screenHeight = scrollView.frame.size.height
 
         // Check if the user has scrolled to the bottom and isLoading is false
-        if offsetY > contentHeight - screenHeight,
+        if offsetY > contentHeight - screenHeight - screenHeight,
             paginationViewModel.isLoadNextPageAvailable() {
             fetchAny(isRefresh: false)
         }

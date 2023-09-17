@@ -26,6 +26,20 @@ class AppLanguageManager {
         }
     }
     
+    var currentKItunesSearchAPILanguage: String {
+        let lang = currentLanguage
+        if lang == "en" {
+            return "en_us"
+        }
+        if lang == "zh-Hant" {
+            return "zh_hk"
+        }
+        if lang == "zh-Hans" {
+            return "zh_cn"
+        }
+        return "en_us"
+    }
+    
     func changeAppLanguage(language: String) {
         AppLanguageManager.shared.currentLanguage = language
         NotificationCenter.default.post(name: NSNotification.Name(AppLanguageManager.kLanguageDidChangeKey), object: nil)

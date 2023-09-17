@@ -15,11 +15,14 @@ class ITunesSearchBundleListViewController: KCUIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl?
     @IBOutlet weak var pageView: KCUIPageView?
     @IBOutlet weak var searchBar: UISearchBar?
+    @IBOutlet weak var searchHistoryContainer: UIView?
     
     var vcSong: ITunesMusicItemListViewController?
     var vcAlbum: ITunesMusicItemListViewController?
     var vcArtist: ITunesMusicItemListViewController?
     
+    
+    var vcSearchHistory: ITunesSearchHistoryListViewController?
     
     
     var selectedCountryValue: String? = nil
@@ -54,14 +57,64 @@ class ITunesSearchBundleListViewController: KCUIViewController {
         let barBtnItem = KCUIBarButtonItem(kcTitle: "", style: .plain, target: self, action: #selector(onApplyBarBtnFilter))
         barBtnItem.titleLocalizationKey = "filters"
         navigationItem.rightBarButtonItem = barBtnItem
+        
+        
+
+        
+        vcSearchHistory = ITunesSearchHistoryListViewController()
+        vcSearchHistory?.onClickEmptySpace = { [weak self] in
+            self?.searchBar?.endEditing(true)
+            self?.dismissVcSearchHistory()
+            if let text = self?.searchBar?.text,
+               self?.vcSearchHistory?.query != text {
+                self?.applySearchText(text: text)
+            }
+        }
+        
+        vcSearchHistory?.onSelectHistoryItem = { [weak self] text in
+            self?.searchBar?.endEditing(true)
+            self?.dismissVcSearchHistory()
+            self?.searchBar?.text = text
+            self?.applySearchText(text: text)
+        }
+        
+        
+        if let vcSearchHistory = vcSearchHistory {
+            searchHistoryContainer?.addSubview(vcSearchHistory.view)
+            addChild(vcSearchHistory)
+        }
     }
     
     deinit {
         vcSong?.removeFromParent()
         vcAlbum?.removeFromParent()
         vcArtist?.removeFromParent()
+        vcSearchHistory?.removeFromParent()
     }
 
+    
+    func dismissVcSearchHistory() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.searchHistoryContainer?.alpha = 0.0
+        })
+    }
+    
+    func showVcSearchHistory() {
+        UIView.animate(withDuration: 0.25) {
+            self.searchHistoryContainer?.alpha = 1.0
+        }
+        vcSearchHistory?.refreshData()
+    }
+    
+    
+    func applySearchText(text: String?) {
+        if let text = text {
+            vcSong?.query = text
+            vcAlbum?.query = text
+            vcArtist?.query = text
+            vcSearchHistory?.query = text
+        }
+    }
     
     
     @objc func onApplyBarBtnFilter() {
@@ -109,9 +162,16 @@ class ITunesSearchBundleListViewController: KCUIViewController {
 extension ITunesSearchBundleListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder() // Hide the keyboard when the search button is clicked
-        vcSong?.query = searchBar.text ?? ""
-        vcAlbum?.query = searchBar.text ?? ""
-        vcArtist?.query = searchBar.text ?? ""
+        self.applySearchText(text: searchBar.text)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        showVcSearchHistory()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        dismissVcSearchHistory()
     }
 }
 
