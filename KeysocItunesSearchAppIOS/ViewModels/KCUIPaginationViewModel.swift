@@ -8,11 +8,23 @@
 import Foundation
 
 class KCUIPaginationViewModel {
+    
+    /// current page of the list data fetch
     var currentPage = 0
+    
+    /// loading busy status
     var isLoading = false
+    
+    /// refreshing busy status
     var isRefreshing = false
+    
+    /// whether the list data is ended
     var isEnded = false
+    
+    /// whether the list data encounters an error
     var isError = false
+    
+    /// used for identifying each refresh action
     var refreshHash: Int = 1
     
     
