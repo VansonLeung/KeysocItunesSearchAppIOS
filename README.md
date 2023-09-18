@@ -34,6 +34,12 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
 
 ![app_architecture drawio](https://github.com/VansonLeung/KeysocItunesSearchAppIOS/assets/1129695/3dd69073-dd34-4f21-bf6e-be0b8a36ddf1)
 
+- KCUI* is a UI element family that extends from UIKit.
+- KCUI*'s Main features include:
+  - App localization observer
+  - asdfsadf
+  - asdfsadf
+
 
 ## App MVVM flow
 
