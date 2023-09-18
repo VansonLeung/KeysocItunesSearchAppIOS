@@ -37,8 +37,7 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
 - KCUI* is a UI element family that extends from UIKit.
 - KCUI*'s Main features include:
   - App localization observer
-  - asdfsadf
-  - asdfsadf
+  - App UI element base styling
 
 
 ## App MVVM flow
