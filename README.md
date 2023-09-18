@@ -40,7 +40,7 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
   - App UI element base styling
 - Core Data functions to:
   - store favourites
-  - store seaerch history
+  - store search history
 
 
 ## App MVVM flow
