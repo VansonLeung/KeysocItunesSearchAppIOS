@@ -38,6 +38,9 @@ https://github.com/VansonLeung/KeysocItunesSearchAppIOS
 - KCUI*'s Main features include:
   - App localization observer
   - App UI element base styling
+- Core Data functions to:
+  - store favourites
+  - store seaerch history
 
 
 ## App MVVM flow
