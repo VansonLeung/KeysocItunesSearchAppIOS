@@ -81,190 +81,169 @@ class ITunesMusicItemListViewController : UIViewController {
     
     
     func fetchAny(isRefresh: Bool = false) {
-        switch itemType {
-        case .song:
-            fetchSongs(isRefresh: isRefresh)
-        case .artist:
-            fetchArtists(isRefresh: isRefresh)
-        case .album:
-            fetchAlbums(isRefresh: isRefresh)
-        }
-    }
-    
-    
-    private func fetchSongs(isRefresh: Bool = false) {
-        paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
-            [weak self] shouldFetch, curRefreshHash, page in
-            
-            if !shouldFetch { return }
-            
-            KCITunesAPIQueryService.shared.searchSongs(
-                withQuery: self?.query ?? "",
-                limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0),
-                mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue,
-                lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
-            ) { [weak self] result in
-                switch result {
-                case .success(let songs):
-                    
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: false,
-                        isEnded: songs.isEmpty)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                            // Refresh the viewmodel list
-                            self?.itemViewModels.removeAll()
-                            self?.tableView?.setContentOffset(.zero, animated: false)
-                        }
-                        
-                        // Append the viewmodel list
-                        self?.itemViewModels.append(contentsOf: songs.map { KCUIItunesItemSongViewModel(song: $0) } )
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: true,
-                        isEnded: true)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                        }
-                        
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                }
+        Task {
+            switch itemType {
+            case .song:
+                await fetchSongs(isRefresh: isRefresh)
+            case .artist:
+                await fetchArtists(isRefresh: isRefresh)
+            case .album:
+                await fetchAlbums(isRefresh: isRefresh)
             }
         }
     }
     
-    private func fetchArtists(isRefresh: Bool = false) {
-        paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
-            [weak self] shouldFetch, curRefreshHash, page in
-            
-            if !shouldFetch { return }
-            
-            KCITunesAPIQueryService.shared.searchArtists(
-                withQuery: self?.query ?? "",
-                limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0),
-                mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue,
+    
+    private func fetchSongs(isRefresh: Bool = false) async {
+        let (shouldFetch, curRefreshHash, page) = await paginationViewModel.onPrepareFetchAsync(isRefresh: isRefresh)
+        
+        if !shouldFetch { return }
+        
+        do {
+            let songs = try await KCITunesAPIQueryServiceAsync.shared.searchSongs(
+                withQuery: query,
+                limit: itemsPerPage,
+                offset: page * (itemsPerPage),
+                mediaType: selectedMediaTypeValue,
+                country: selectedCountryValue,
                 lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
-            ) { [weak self] result in
-                switch result {
-                case .success(let artists):
-                    
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: false,
-                        isEnded: artists.isEmpty)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                            // Refresh the viewmodel list
-                            self?.itemViewModels.removeAll()
-                            self?.tableView?.setContentOffset(.zero, animated: false)
-                        }
-                        
-                        // Append the viewmodel list
-                        self?.itemViewModels.append(contentsOf: artists.map { KCUIItunesItemArtistViewModel(artist: $0) } )
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: true,
-                        isEnded: true)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                        }
-                        
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                }
+            )
+            
+            await paginationViewModel.onPostFetchAsync(
+                curRefreshHash: curRefreshHash,
+                isRefresh: isRefresh,
+                isError: false,
+                isEnded: songs.isEmpty
+            )
+            
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+                // Refresh the viewmodel list
+                itemViewModels.removeAll()
+                tableView?.setContentOffset(.zero, animated: false)
             }
+            
+            // Append the viewmodel list
+            itemViewModels.append(contentsOf: songs.map { KCUIItunesItemSongViewModel(song: $0) } )
+            reloadList()
+            refreshState()
+            
+        } catch {
+            
+            await paginationViewModel.onPostFetchAsync(curRefreshHash: curRefreshHash, isRefresh: isRefresh, isError: true, isEnded: true)
+
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+            }
+            
+            reloadList()
+            refreshState()
         }
     }
     
-    private func fetchAlbums(isRefresh: Bool = false) {
-        paginationViewModel.onPrepareFetch(isRefresh: isRefresh) {
-            [weak self] shouldFetch, curRefreshHash, page in
-            
-            if !shouldFetch { return }
-            
-            KCITunesAPIQueryService.shared.searchAlbums(
-                withQuery: self?.query ?? "",
-                limit: self?.itemsPerPage ?? 1,
-                offset: page * (self?.itemsPerPage ?? 0),
-                mediaType: self?.selectedMediaTypeValue,
-                country: self?.selectedCountryValue,
+    
+    private func fetchAlbums(isRefresh: Bool = false) async {
+        let (shouldFetch, curRefreshHash, page) = await paginationViewModel.onPrepareFetchAsync(isRefresh: isRefresh)
+        
+        if !shouldFetch { return }
+        
+        do {
+            let albums = try await KCITunesAPIQueryServiceAsync.shared.searchAlbums(
+                withQuery: query,
+                limit: itemsPerPage,
+                offset: page * (itemsPerPage),
+                mediaType: selectedMediaTypeValue,
+                country: selectedCountryValue,
                 lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
-            ) { [weak self] result in
-                switch result {
-                case .success(let albums):
-                    
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: false,
-                        isEnded: albums.isEmpty)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                            // Refresh the viewmodel list
-                            self?.itemViewModels.removeAll()
-                            self?.tableView?.setContentOffset(.zero, animated: false)
-                        }
-                        
-                        // Append the viewmodel list
-                        self?.itemViewModels.append(contentsOf: albums.map { KCUIItunesItemAlbumViewModel(album: $0) } )
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                    self?.paginationViewModel.onPostFetch(
-                        curRefreshHash: curRefreshHash,
-                        isRefresh: isRefresh,
-                        isError: true,
-                        isEnded: true)
-                    {
-                        if isRefresh {
-                            // restore RefreshControl
-                            self?.tableView?.refreshControl?.endRefreshing()
-                        }
-                        
-                        self?.reloadList()
-                        self?.refreshState()
-                    }
-                }
+            )
+            
+            await paginationViewModel.onPostFetchAsync(
+                curRefreshHash: curRefreshHash,
+                isRefresh: isRefresh,
+                isError: false,
+                isEnded: albums.isEmpty
+            )
+            
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+                // Refresh the viewmodel list
+                itemViewModels.removeAll()
+                tableView?.setContentOffset(.zero, animated: false)
             }
+            
+            // Append the viewmodel list
+            itemViewModels.append(contentsOf: albums.map { KCUIItunesItemAlbumViewModel(album: $0) } )
+            reloadList()
+            refreshState()
+            
+        } catch {
+            
+            await paginationViewModel.onPostFetchAsync(curRefreshHash: curRefreshHash, isRefresh: isRefresh, isError: true, isEnded: true)
+
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+            }
+            
+            reloadList()
+            refreshState()
         }
     }
+    
+    
+    
+    private func fetchArtists(isRefresh: Bool = false) async {
+        let (shouldFetch, curRefreshHash, page) = await paginationViewModel.onPrepareFetchAsync(isRefresh: isRefresh)
+        
+        if !shouldFetch { return }
+        
+        do {
+            let artists = try await KCITunesAPIQueryServiceAsync.shared.searchArtists(
+                withQuery: query,
+                limit: itemsPerPage,
+                offset: page * (itemsPerPage),
+                mediaType: selectedMediaTypeValue,
+                country: selectedCountryValue,
+                lang: AppLanguageManager.shared.currentKItunesSearchAPILanguage
+            )
+            
+            await paginationViewModel.onPostFetchAsync(
+                curRefreshHash: curRefreshHash,
+                isRefresh: isRefresh,
+                isError: false,
+                isEnded: artists.isEmpty
+            )
+            
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+                // Refresh the viewmodel list
+                itemViewModels.removeAll()
+                tableView?.setContentOffset(.zero, animated: false)
+            }
+            
+            // Append the viewmodel list
+            itemViewModels.append(contentsOf: artists.map { KCUIItunesItemArtistViewModel(artist: $0) } )
+            reloadList()
+            refreshState()
+            
+        } catch {
+            
+            await paginationViewModel.onPostFetchAsync(curRefreshHash: curRefreshHash, isRefresh: isRefresh, isError: true, isEnded: true)
+
+            if isRefresh {
+                // restore RefreshControl
+                tableView?.refreshControl?.endRefreshing()
+            }
+            
+            reloadList()
+            refreshState()
+        }
+    }
+    
     
     
     private func refreshState() {

@@ -72,6 +72,32 @@ class KCUIPaginationViewModel {
     
     
     
+    
+    /// [Concurrency] Prepare the pagination view model to load the next request (next page or refresh)
+    ///
+    /// - Parameters:
+    ///   - isRefresh: whether the next request is refresh or load-more
+    ///
+    /// - Returns:
+    ///   - shouldFetch: `Bool` whether the next request should be called or not
+    ///   - curRefreshHash: `Int` to identify each refresh action
+    ///   - page: `Int` to return the current page (or return 0 for refresh action)
+    func onPrepareFetchAsync(
+        isRefresh: Bool
+    ) async -> (shouldFetch: Bool, curRefreshHash: Int, page: Int)
+    {
+        return await withCheckedContinuation { continuation in
+            onPrepareFetch(
+                isRefresh: isRefresh,
+                completion: { shouldFetch, curRefreshHash, page in
+                    continuation.resume(returning: (shouldFetch, curRefreshHash, page))
+                }
+            )
+        }
+    }
+    
+    
+    
     /// Post-process the pagination view model to end the current request
     ///
     /// - Parameters:
@@ -133,5 +159,32 @@ class KCUIPaginationViewModel {
 
         }
         
+    }
+    
+    
+    /// [Concurrency] Post-process the pagination view model to end the current request
+    ///
+    /// - Parameters:
+    ///   - curRefreshHash: input of `curRefreshHash` from `onPrepareFetch(..)`
+    ///   - isRefresh: input of `isRefresh` from `onPrepareFetch(..)`
+    ///   - isError: `Bool` to indicate if the request has error (e.g. API error)
+    ///   - isEnded: `Bool` to indicate if the request has ended (e.g. last page has reached, no more results)
+    func onPostFetchAsync(
+        curRefreshHash: Int,
+        isRefresh: Bool,
+        isError: Bool,
+        isEnded: Bool
+    ) async
+    {
+        return await withCheckedContinuation { continuation in
+            onPostFetch(
+                curRefreshHash: curRefreshHash,
+                isRefresh: isRefresh,
+                isError: isError,
+                isEnded: isEnded
+            ) {
+                continuation.resume()
+            }
+        }
     }
 }
